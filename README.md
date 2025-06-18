@@ -240,22 +240,22 @@ In the README.md, provide a brief overview of the project, including the project
 The server-side architecture for the Airbnb Clone project is engineered to offer a resilient and extensible framework. It is built to oversee user accounts, property data, reservations, and financial transactions. This core infrastructure will support the diverse functionalities needed to replicate Airbnb's essential features, guaranteeing a seamless experience for both guests and hosts.
 
 ### Project Goals
-User Management: Implement a secure system for user registration, authentication, and profile management.
-Property Management: Develop features for property listing creation, updates, and retrieval.
-Booking System: Create a booking mechanism for users to reserve properties and manage booking details.
-Payment Processing: Integrate a payment system to handle transactions and record payment details.
-Review System: Allow users to leave reviews and ratings for properties.
-Data Optimization: Ensure efficient data retrieval and storage through database optimizations.
+**User Management:** Implement a secure system for user registration, authentication, and profile management.  
+**Property Management:** Develop features for property listing creation, updates, and retrieval.  
+**Booking System:** Create a booking mechanism for users to reserve properties and manage booking details.  
+**Payment Processing:** Integrate a payment system to handle transactions and record payment details.  
+**Review System:** Allow users to leave reviews and ratings for properties.  
+**Data Optimization:** Ensure efficient data retrieval and storage through database optimizations.  
 
 ### Tech Stack
-Django: A high-level Python web framework used for building the RESTful API.
-Django REST Framework: Provides tools for creating and managing RESTful APIs.
-PostgreSQL: A powerful relational database used for data storage.
-GraphQL: Allows for flexible and efficient querying of data.
-Celery: For handling asynchronous tasks such as sending notifications or processing payments.
-Redis: Used for caching and session management.
-Docker: Containerization tool for consistent development and deployment environments.
-CI/CD Pipelines: Automated pipelines for testing and deploying code changes.
+**Django:** A high-level Python web framework used for building the RESTful API.  
+**Django REST Framework:** Provides tools for creating and managing RESTful APIs.  
+**PostgreSQL:** A powerful relational database used for data storage.  
+**GraphQL:** Allows for flexible and efficient querying of data.  
+**Celery:** For handling asynchronous tasks such as sending notifications or processing payments.  
+**Redis:** Used for caching and session management.  
+**Docker:** Containerization tool for consistent development and deployment environments.  
+**CI/CD Pipelines:** Automated pipelines for testing and deploying code changes.  
 
 _Task 1:
 Objective: Understand the various roles within the project team.
@@ -264,24 +264,16 @@ Based on the roles outlined in the project overview (e.g., Backend Developer, Da
 
 ## Team Roles
 
-Backend Developer: Responsible for implementing API endpoints, database schemas, and business logic.  
-Database Administrator: Manages database design, indexing, and optimizations.  
-
-DevOps Engineer: Handles deployment, monitoring, and scaling of the backend services.  
-
-QA Engineer: Ensures the backend functionalities are thoroughly tested and meet quality standards.  
-
-Business Analyst: Understands customer’s business processes and translates those needs into requirements.  
-
-Product Owner: Responsible for a product's vision, evolution, and that the product meets customer requirements.  
-
-Project Manager: Manages the software development team, and ensures delivery within time and budget constraints.  
-
-UI/UX Designer: Crafts the overall experience, visual interface of a digital product to make it intuitive, accessible, and enjoyable for users.  
-
-Software Architect: Designs the high-level system architecture, selects the technology stack, and defines technical standards for development.  
-
-Test Automation Engineer: Designs the test automation framework, and writes and maintains scripts for automated testing.  
+**Backend Developer:** Responsible for implementing API endpoints, database schemas, and business logic.  
+**Database Administrator:** Manages database design, indexing, and optimizations.  
+**DevOps Engineer:** Handles deployment, monitoring, and scaling of the backend services.  
+**QA Engineer:** Ensures the backend functionalities are thoroughly tested and meet quality standards.  
+**Business Analyst:** Understands customer’s business processes and translates those needs into requirements.  
+**Product Owner:** Responsible for a product's vision, evolution, and that the product meets customer requirements.  
+**Project Manager:** Manages the software development team, and ensures delivery within time and budget constraints.  
+**UI/UX Designer:** Crafts the overall experience, visual interface of a digital product to make it intuitive, accessible, and enjoyable for users.  
+**Software Architect:** Designs the high-level system architecture, selects the technology stack, and defines technical standards for development.  
+**Test Automation Engineer:** Designs the test automation framework, and writes and maintains scripts for automated testing.  
 
 _Software Developer: LoremIpsumDolor_
 
