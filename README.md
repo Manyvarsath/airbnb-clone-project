@@ -123,23 +123,22 @@ Delete everything above this, before submitting for review
 # Tech Stack
 
 # UI/UX Design Planning
-Objective: Document the planning process for the UI/UX design.
-- Outline the design goals and the key features that need to be implemented.
-- Include descriptions of the three primary pages: Property Listing View, Listing Detailed View, and Simple Checkout View in a table view
-- Explain the importance of a user-friendly design in a booking system.
+_Objective: Document the planning process for the UI/UX design.
+Outline the design goals and the key features that need to be implemented.
+Include descriptions of the three primary pages: Property Listing View, Listing Detailed View, and Simple Checkout View in a table view
+Explain the importance of a user-friendly design in a booking system.
 Objective: Understand and explore the figma environment
-- Create a list for all color styles, Typography (front family, font weight, font size)
-- Explain the importance of identifying design properties of a mock up design.
+Create a list for all color styles, Typography (front family, font weight, font size)
+Explain the importance of identifying design properties of a mock up design._
   
 # Project Roles and Responsibilities
-Objective: Define and document the roles and responsibilities within the project.
-
-- List and describe the roles such as Project Manager, Frontend Developers, Backend Developers, Designers, QA/Testers, DevOps Engineers, Product Owner, and Scrum Master.
-- For each role, outline their key responsibilities and how they contribute to the project’s success.
+_Objective: Define and document the roles and responsibilities within the project.
+List and describe the roles such as Project Manager, Frontend Developers, Backend Developers, Designers, QA/Testers, DevOps Engineers, Product Owner, and Scrum Master.
+For each role, outline their key responsibilities and how they contribute to the project’s success._
 
 # UI Component Patterns
-Objective: Begin exploring the UI components for the AirBnB Clone project.
-- Describe the components you plan to create, such as a Navbar, Property Card, and Footer
+_Objective: Begin exploring the UI components for the AirBnB Clone project.
+- Describe the components you plan to create, such as a Navbar, Property Card, and Footer_
 
 ------------------------
 # BackEnd
@@ -233,23 +232,50 @@ Delete everything above this, before submitting for review
 -------------------------------
 
 _Task 0:
-
 Objective: Set up your GitHub repository for the AirBnB Clone project.
 Instructions:
-- In the README.md, provide a brief overview of the project, including the project goals, the tech stack.
-_
-# Overview
+In the README.md, provide a brief overview of the project, including the project goals, the tech stack._
 
-# Project Goals
+## Overview
+The server-side architecture for the Airbnb Clone project is engineered to offer a resilient and extensible framework. It is built to oversee user accounts, property data, reservations, and financial transactions. This core infrastructure will support the diverse functionalities needed to replicate Airbnb's essential features, guaranteeing a seamless experience for both guests and hosts.
 
-# Tech Stack
+### Project Goals
+User Management: Implement a secure system for user registration, authentication, and profile management.
+Property Management: Develop features for property listing creation, updates, and retrieval.
+Booking System: Create a booking mechanism for users to reserve properties and manage booking details.
+Payment Processing: Integrate a payment system to handle transactions and record payment details.
+Review System: Allow users to leave reviews and ratings for properties.
+Data Optimization: Ensure efficient data retrieval and storage through database optimizations.
+
+### Tech Stack
+Django: A high-level Python web framework used for building the RESTful API.
+Django REST Framework: Provides tools for creating and managing RESTful APIs.
+PostgreSQL: A powerful relational database used for data storage.
+GraphQL: Allows for flexible and efficient querying of data.
+Celery: For handling asynchronous tasks such as sending notifications or processing payments.
+Redis: Used for caching and session management.
+Docker: Containerization tool for consistent development and deployment environments.
+CI/CD Pipelines: Automated pipelines for testing and deploying code changes.
 
 _Task 1:
 Objective: Understand the various roles within the project team.
 Instructions:
-Based on the roles outlined in the project overview (e.g., Backend Developer, Database Administrator, etc.) and from the ITRexGroup blog, provide a brief description of each role and their responsibility in the project.
-_
-# Team Roles
+Based on the roles outlined in the project overview (e.g., Backend Developer, Database Administrator, etc.) and from the ITRexGroup blog, provide a brief description of each role and their responsibility in the project._
+
+## Team Roles
+
+Backend Developer: Responsible for implementing API endpoints, database schemas, and business logic.
+Database Administrator: Manages database design, indexing, and optimizations.
+DevOps Engineer: Handles deployment, monitoring, and scaling of the backend services.
+QA Engineer: Ensures the backend functionalities are thoroughly tested and meet quality standards.
+Business Analyst: Understands customer’s business processes and translates those needs into requirements.
+Product Owner: Responsible for a product's vision, evolution, and that the product meets customer requirements.
+Project Manager: Manages the software development team, and ensures delivery within time and budget constraints.
+UI/UX Designer: Crafts the overall experience, visual interface of a digital product to make it intuitive, accessible, and enjoyable for users.
+Software Architect: Designs the high-level system architecture, selects the technology stack, and defines technical standards for development.
+Test Automation Engineer: Designs the test automation framework, and writes and maintains scripts for automated testing.
+
+_Software Developer: LoremIpsumDolor_
 
 _Task 2:
 Objective: Deepen your understanding of the project’s technology stack.
@@ -257,14 +283,17 @@ Instructions:
 List the technologies mentioned in the project overview (e.g., Django, PostgreSQL, GraphQL, etc.).
 For each technology, explain its purpose in the project (e.g., “Django: a web framework for building RESTful APIs”)._
 
+
+
+
+
 # Technology Stack
 
-Task 3:
-_Objective: Understand how the database will be structured.
+_Task 3:
+Objective: Understand how the database will be structured.
 Instructions:
 List the key entities required for the project, such as Users, Properties, Bookings, Reviews, and Payments.
-For each entity, list 3-5 important fields and describe how these entities are related (e.g., a user can have multiple properties, a booking belongs to a property, etc.).
-_
+For each entity, list 3-5 important fields and describe how these entities are related (e.g., a user can have multiple properties, a booking belongs to a property, etc.)._
 
 # Database Design
 
@@ -272,8 +301,7 @@ _Task 4:
 Objective: Detail the features of the Airbnb Clone project.
 Instructions:
 List the main features (e.g., user management, property management, booking system, etc.) as outlined in the project overview.
-Provide a 2-3 sentence description of each feature, explaining how it contributes to the project.
-_
+Provide a 2-3 sentence description of each feature, explaining how it contributes to the project._
 
 # Feature Breakdown
 
@@ -281,8 +309,7 @@ _Task 5:
 Objective: Understand the importance of securing the backend APIs.
 Instructions:
 Explain the key security measures that will be implemented (e.g., authentication, authorization, rate limiting).
-Provide a brief explanation of why security is crucial for each key area of the project (e.g., protecting user data, securing payments, etc.).
-_
+Provide a brief explanation of why security is crucial for each key area of the project (e.g., protecting user data, securing payments, etc.)._
 
 # API Security
 
@@ -290,7 +317,6 @@ _Task 6:
 Objective: Understand how CI/CD pipelines contribute to the development process.
 Instructions:
 Briefly explain what CI/CD pipelines are and why they are important for the project.
-Mention the tools that could be used for this (e.g., GitHub Actions, Docker, etc.).
-_
+Mention the tools that could be used for this (e.g., GitHub Actions, Docker, etc.)._
 
 # CI/CD Pipeline
