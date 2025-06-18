@@ -264,16 +264,24 @@ Based on the roles outlined in the project overview (e.g., Backend Developer, Da
 
 ## Team Roles
 
-Backend Developer: Responsible for implementing API endpoints, database schemas, and business logic.
-Database Administrator: Manages database design, indexing, and optimizations.
-DevOps Engineer: Handles deployment, monitoring, and scaling of the backend services.
-QA Engineer: Ensures the backend functionalities are thoroughly tested and meet quality standards.
-Business Analyst: Understands customer’s business processes and translates those needs into requirements.
-Product Owner: Responsible for a product's vision, evolution, and that the product meets customer requirements.
-Project Manager: Manages the software development team, and ensures delivery within time and budget constraints.
-UI/UX Designer: Crafts the overall experience, visual interface of a digital product to make it intuitive, accessible, and enjoyable for users.
-Software Architect: Designs the high-level system architecture, selects the technology stack, and defines technical standards for development.
-Test Automation Engineer: Designs the test automation framework, and writes and maintains scripts for automated testing.
+Backend Developer: Responsible for implementing API endpoints, database schemas, and business logic.  
+Database Administrator: Manages database design, indexing, and optimizations.  
+
+DevOps Engineer: Handles deployment, monitoring, and scaling of the backend services.  
+
+QA Engineer: Ensures the backend functionalities are thoroughly tested and meet quality standards.  
+
+Business Analyst: Understands customer’s business processes and translates those needs into requirements.  
+
+Product Owner: Responsible for a product's vision, evolution, and that the product meets customer requirements.  
+
+Project Manager: Manages the software development team, and ensures delivery within time and budget constraints.  
+
+UI/UX Designer: Crafts the overall experience, visual interface of a digital product to make it intuitive, accessible, and enjoyable for users.  
+
+Software Architect: Designs the high-level system architecture, selects the technology stack, and defines technical standards for development.  
+
+Test Automation Engineer: Designs the test automation framework, and writes and maintains scripts for automated testing.  
 
 _Software Developer: LoremIpsumDolor_
 
