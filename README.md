@@ -341,6 +341,19 @@ For each entity, list 3-5 important fields and describe how these entities are r
 
 # Database Design
 
+### Users
+id:
+name:
+surname:
+### Properties
+id:
+
+### Bookings
+
+### Payments
+
+### Reviews
+
 _Task 4:
 Objective: Detail the features of the Airbnb Clone project.
 Instructions:
