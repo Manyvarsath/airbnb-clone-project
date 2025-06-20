@@ -167,16 +167,18 @@ The server-side architecture for the Airbnb Clone project is engineered to offer
 
 ## 🤝 Team Roles  
 
-**Backend Developer:** Responsible for implementing API endpoints, database schemas, and business logic.  
-**Database Administrator:** Manages database design, indexing, and optimizations.  
-**DevOps Engineer:** Handles deployment, monitoring, and scaling of the backend services.  
-**QA Engineer:** Ensures the backend functionalities are thoroughly tested and meet quality standards.  
-**Business Analyst:** Understands customer’s business processes and translates those needs into requirements.  
-**Product Owner:** Responsible for a product's vision, evolution, and that the product meets customer requirements.  
-**Project Manager:** Manages the software development team, and ensures delivery within time and budget constraints.  
-**UI/UX Designer:** Crafts the overall experience, visual interface of a digital product to make it intuitive, accessible, and enjoyable for users.  
-**Software Architect:** Designs the high-level system architecture, selects the technology stack, and defines technical standards for development.  
-**Test Automation Engineer:** Designs the test automation framework, and writes and maintains scripts for automated testing.  
+| Role | Responsibilities |
+| --- | --- |
+| **Backend Developer** | Responsible for implementing API endpoints, database schemas, and business logic. |
+| **Database Administrator** | Manages database design, indexing, and optimizations. |
+| **DevOps Engineer** | Handles deployment, monitoring, and scaling of the backend services. |
+| **QA Engineer** | Ensures the backend functionalities are thoroughly tested and meet quality standards. |
+| **Business Analyst** | Understands customer’s business processes and translates those needs into requirements. |
+| **Product Owner** | Responsible for a product's vision, evolution, and that the product meets customer requirements. |
+| **Project Manager** | Manages the software development team, and ensures delivery within time and budget constraints. |
+| **UI/UX Designer** | Crafts the overall experience, visual interface of a digital product to make it intuitive, accessible, and enjoyable for users. |
+| **Software Architect** | Designs the high-level system architecture, selects the technology stack, and defines technical standards for development. |
+| **Test Automation Engineer** | Designs the test automation framework, and writes and maintains scripts for automated testing. |
 
 ## ⚙️ Technology Stack
 
@@ -305,9 +307,8 @@ A single Booking can be associated with multiple Payment records.
 Each Payment record corresponds to exactly one Booking.  
 Implementation: The Payment table has a booking_id field.  
 
-## 🧩 Feature Breakdown
----
 
+## 🧩 Feature Breakdown
 The main features that will be implemented for the airbnb clone project, are the following:  
 
 ### API Documentation  
@@ -331,8 +332,8 @@ The review system allows guests to post ratings and comments about their stays, 
 ### Database Optimizations  
 This feature focuses on enhancing the backend's performance and responsiveness, especially as the amount of data grows. Techniques like indexing allow for faster data retrieval for common queries, while caching reduces the database load by storing frequently accessed information in a faster-access memory layer. These optimizations are vital for providing a smooth and fast user experience.  
 
+
 ## 🛡️ API Security
----
 
 ### Security Measures To Implement
 Securing the backend API is fundamental to protecting the platform and its users. The following measures will be implemented to create a robust defense against common threats:  
@@ -357,7 +358,6 @@ For this project, security is not a single feature but a critical requirement th
 **Maintaining Platform Integrity:** The value of the platform depends on the integrity of its content, such as bookings and reviews. A lack of security could allow malicious users to create fake bookings to block a property's availability, cancel legitimate reservations, or post fraudulent reviews to manipulate property ratings. Strict authorization rules, ensuring only the verified guest of a completed booking can leave a review, are vital for maintaining a fair and reliable ecosystem.  
 
 ## 🚧 CI/CD Pipeline
----
 
 CI/CD stands for Continuous Integration and Continuous Delivery/Deployment. It is an automated practice that streamlines the process of building, testing, and deploying software. A pipeline is the sequence of automated steps that takes new code from a developer's machine and delivers it to production.  
 
@@ -367,7 +367,7 @@ CI/CD stands for Continuous Integration and Continuous Delivery/Deployment. It i
 
 **Continuous Delivery or CD:** This is the stage that follows a successful CI process. It automatically prepares and packages the tested code for release. The code is kept in a deployable state, allowing for a release to be triggered at any time with the push of a button. Continuous Deployment is an extension of this, where every change that passes all tests is automatically deployed to production without human intervention.  
 
-### Importance of CI/CD
+### Importance of CI/CD  
 For our Airbnb clone project, CI/CD pipelines will be crucial for several reasons:
 
 **Ensuring Quality and Reliability:** The platform handles critical operations like payments and bookings. The automated testing in a CI pipeline ensures that every code change is rigorously validated, significantly reducing the risk of introducing bugs that could affect users or cause financial errors.  
@@ -376,8 +376,8 @@ For our Airbnb clone project, CI/CD pipelines will be crucial for several reason
 
 **Providing Consistent and Reliable Deployments:** Automation eliminates the manual errors that can occur during deployment. Every release is built, tested, and deployed using the exact same process, ensuring consistency and making the release process predictable and less risky.  
 
-### CI/CD Tools  
 
+### CI/CD Tools  
 We will be looking at several tools that may work together to create an effective CI/CD pipeline. The primary tools we will look at for this project will be:  
 
 **GitHub Actions:** This is the orchestrator of the pipeline. As a CI/CD platform integrated directly into GitHub, it can be configured to automatically trigger workflows which are a series of jobs, whenever code is pushed to the repository. These workflows can be used to run tests, build artifacts, and deploy the application.  
