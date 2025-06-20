@@ -144,7 +144,7 @@ _Objective: Begin exploring the UI components for the AirBnB Clone project.
 # BackEnd
 ---
 
-## Overview
+## 🔎 Overview
 The server-side architecture for the Airbnb Clone project is engineered to offer a resilient and extensible framework. It is built to oversee user accounts, property data, reservations, and financial transactions. This core infrastructure will support the diverse functionalities needed to replicate Airbnb's essential features, guaranteeing a seamless experience for both guests and hosts.  
 
 ### Project Goals
@@ -165,7 +165,7 @@ The server-side architecture for the Airbnb Clone project is engineered to offer
 **Docker:** Containerization tool for consistent development and deployment environments.  
 **CI/CD Pipelines:** Automated pipelines for testing and deploying code changes.  
 
-## Team Roles  
+## 🤝 Team Roles  
 
 **Backend Developer:** Responsible for implementing API endpoints, database schemas, and business logic.  
 **Database Administrator:** Manages database design, indexing, and optimizations.  
@@ -178,7 +178,7 @@ The server-side architecture for the Airbnb Clone project is engineered to offer
 **Software Architect:** Designs the high-level system architecture, selects the technology stack, and defines technical standards for development.  
 **Test Automation Engineer:** Designs the test automation framework, and writes and maintains scripts for automated testing.  
 
-## Technology Stack
+## ⚙️ Technology Stack
 
 
 ### Django:  
@@ -305,7 +305,7 @@ A single Booking can be associated with multiple Payment records.
 Each Payment record corresponds to exactly one Booking.  
 Implementation: The Payment table has a booking_id field.  
 
-## Feature Breakdown
+## 🧩 Feature Breakdown
 ---
 
 The main features that will be implemented for the airbnb clone project, are the following:  
@@ -331,7 +331,7 @@ The review system allows guests to post ratings and comments about their stays, 
 ### Database Optimizations  
 This feature focuses on enhancing the backend's performance and responsiveness, especially as the amount of data grows. Techniques like indexing allow for faster data retrieval for common queries, while caching reduces the database load by storing frequently accessed information in a faster-access memory layer. These optimizations are vital for providing a smooth and fast user experience.  
 
-## API Security
+## 🛡️ API Security
 ---
 
 ### Security Measures To Implement
@@ -356,7 +356,7 @@ For this project, security is not a single feature but a critical requirement th
 
 **Maintaining Platform Integrity:** The value of the platform depends on the integrity of its content, such as bookings and reviews. A lack of security could allow malicious users to create fake bookings to block a property's availability, cancel legitimate reservations, or post fraudulent reviews to manipulate property ratings. Strict authorization rules, ensuring only the verified guest of a completed booking can leave a review, are vital for maintaining a fair and reliable ecosystem.  
 
-## CI/CD Pipeline
+## 🚧 CI/CD Pipeline
 ---
 
 CI/CD stands for Continuous Integration and Continuous Delivery/Deployment. It is an automated practice that streamlines the process of building, testing, and deploying software. A pipeline is the sequence of automated steps that takes new code from a developer's machine and delivers it to production.  
