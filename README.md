@@ -287,51 +287,53 @@ For each technology, explain its purpose in the project (e.g., “Django: a web 
 
 # Technology Stack
 
-## Django:
-Django serves as the core framework upon which the entire application logic is built. Think of it as the foundational bedrock providing structure, security, and essential tools out-of-the-box. For an Airbnb clone, this is crucial because the platform deals with complex relationships between users, properties, bookings, and payments.
+## Django:  
+Django is a high-level Python web framework used to build the server-side application logic. Its philosophy provides a comprehensive suite of tools for rapid and secure web development, advantageous for a feature-rich platform with complex data models.
 
-Role in the Project: Django's Object-Relational Mapper (ORM) allows developers to interact with the PostgreSQL database using Python code instead of writing raw SQL queries. This makes it incredibly efficient to define and manage models for Users, Properties, Amenities, Reviews, and Bookings. Its built-in authentication system provides a secure way to handle user registration, login, and password management, while its admin panel offers a ready-made interface for project administrators to oversee data without needing custom tools.
+Role in the Project: Django's Object-Relational Mapper abstracts database operations, which will allow us to define and interact with data models using Python. The framework includes a built-in authentication system for managing user accounts and a default admin panel for administrative data management.
 
-## Django REST Framework (DRF):
-If Django is the foundation, DRF is the sophisticated gatekeeper and translator that sits on top. It specializes in transforming the data from Django's models into a format that frontend applications (like a React or mobile app) can easily consume.
+## Django REST Framework:  
+Django REST Framework is a powerful and flexible toolkit that builds upon Django to create Web APIs. It provides the necessary components to expose the application's data and business logic to external clients, such as a web frontend or mobile application.
 
-Role in the Project: DRF is used to build the RESTful API endpoints. For example, it defines what happens when a frontend application makes a request to /api/properties/ or /api/bookings/. It handles data serialization (converting complex data like property objects into JSON), authentication (ensuring only logged-in users can make a booking), and permissions (ensuring a host can only edit their own properties).
+Role in the Project: Django REST Framework will be used to construct the RESTful API endpoints such as /api/properties/, /api/bookings/. Its primary functions include serializing Django querysets and model instances into JSON format, handling request authentication to secure endpoints, and managing permissions to control user access to specific resources.
 
-## PostgreSQL:
-PostgreSQL is the single source of truth for all persistent data. Chosen for its robustness, reliability, and support for complex queries, it ensures data integrity, which is non-negotiable for an application handling reservations and financial transactions.
+## PostgreSQL:  
+PostgreSQL is an open-source object-relational database system used for the primary persistence of all application data. It is selected for its high degree of compliance with the SQL standard, performance with complex queries, and robust features that ensure data integrity.
 
-Role in the Project: Every piece of critical information is stored here: user credentials, host property details (descriptions, photos, pricing, availability calendars), guest booking histories, reviews, and transaction records. Its support for features like ACID transactions guarantees that a booking and its corresponding payment are processed as a single, indivisible operation—it either succeeds completely or fails safely, preventing data corruption.
+Role in the Project: PostgreSQL stores all critical information, including user credentials, property details, pricing, availability calendars, booking histories, reviews, and transaction records. Its support for ACID (Atomicity, Consistency, Isolation, Durability) transactions is essential. This guarantees that operations like a booking and its corresponding payment are processed as a single, indivisible unit, preventing data corruption by ensuring the operation either completes successfully or fails without leaving the database in an inconsistent state.
 
-## GraphQL:
-While DRF provides structured REST endpoints, GraphQL offers a more flexible and efficient alternative for data fetching. It empowers the frontend to ask for exactly the data it needs, no more and no less, all from a single endpoint.
+## GraphQL:  
+GraphQL is a query language for APIs that provides a more efficient and flexible alternative to traditional REST for data fetching. It enables a client to request a specific set of data fields from the server in a single API call.
 
-Role in the Project: Imagine the app's homepage needs to display a list of 20 properties with just their primary photo, title, and price. Later, the user clicks on one property and needs all its details: every photo, the full description, a list of amenities, and all user reviews. Instead of having two separate REST endpoints, GraphQL allows the frontend to specify the exact fields it requires for each view. This reduces the amount of data sent over the network, making the application faster and more responsive, especially on mobile devices.
+Role in the Project: Instead of relying on multiple REST endpoints that return fixed data structures, GraphQL allows the frontend client to define its exact data requirements. For example, a property list view can query for only the title and price, while a detailed property view can query for all associated data. This capability reduces over-fetching of data, minimizes the network payload, and improves application performance.
 
 ## Celery:
-Many operations in an application like Airbnb should not force the user to wait. Celery is the asynchronous task queue that handles these time-consuming processes in the background, ensuring the user experience remains fast and fluid.
+Celery is a distributed task queue system for executing asynchronous operations outside of the main application's request-response cycle. This is used for tasks that are too time-consuming to be handled synchronously without negatively impacting user experience.
 
-Role in the Project: When a guest makes a booking, the main application confirms the reservation instantly. In the background, Celery tasks are triggered to:
-Send a confirmation email to the guest.
-Send an SMS notification to the host.
-Process the payment through a third-party gateway.
-Update the property's availability calendar. All this happens asynchronously, without blocking the user's interaction with the website.
+Role in the Project: When a user action initiates a long-running process, the task is offloaded to a Celery worker. For example, after a booking is confirmed, Celery manages the background execution of tasks such as:
+       - Sending a confirmation email to the guest.
+       - Transmitting a notification to the host.
+       - Initiating payment processing via a third-party gateway.
+       - Updating search indexes or availability data.  
 
 ## Redis:
-Redis is an in-memory data store prized for its incredible speed. It serves two primary purposes in this architecture: caching and messaging.
+Redis is a high-performance, in-memory key-value data store. In this architecture, it serves two distinct functions: as a caching layer to reduce database load and as a message broker to facilitate communication between the web application and Celery.
 
 Role in the Project:
-Caching: To reduce load on the PostgreSQL database, Redis can store the results of frequent queries. For instance, popular property listings or search results can be cached in Redis. When a user requests this data, it's served instantly from memory instead of requiring a slower database query.
-Session Management & Messaging: Redis is also used as a "broker" for Celery. It holds the queue of tasks that Celery workers need to perform. It can also be used to store user session information, allowing for very fast user authentication checks.
+Caching: Redis stores the results of frequent or expensive database queries. Serving this data directly from memory significantly reduces latency and lessens the load on the PostgreSQL database.
+Message Broker: Redis acts as the intermediary that holds tasks for Celery. The Django application places a task message in a Redis queue, and Celery workers retrieve and execute the task from that queue. It can also be used for session storage.
 
 ## Docker:
-Docker is a containerization tool that packages the application and all its dependencies (the specific versions of Python, Django, PostgreSQL, etc.) into a single, isolated unit called a container.
+Docker is a platform for developing, shipping, and running applications in containers. A container packages the application code along with all its dependencies, libraries, and configuration files into a single, isolated unit.
 
-Role in the Project: Docker solves the classic "it works on my machine" problem. It guarantees that the development environment on a developer's laptop is identical to the testing and production environments. This consistency simplifies setup for new developers, eliminates environment-related bugs, and makes deployment predictable and reliable.
+Role in the Project: Docker ensures environment parity between development, testing, and production. By containerizing the application and its services (PostgreSQL, Redis), developers can run the entire stack consistently on any machine. This practice eliminates environment-specific issues, streamlines the onboarding process for new developers, and provides a predictable target for deployment.
 
 ## CI/CD Pipelines:
-CI/CD is a software development methodology that aims to automate a system so that it can manage the process of testing and deploying code. It acts as an automated quality assurance and delivery pipeline.
+CI/CD (Continuous Integration/Continuous Deployment) refers to a set of automated practices that manage the build, testing, and deployment processes of the application.
 
-Role in the Project: When a developer commits a new feature, the CI/CD pipeline automatically kicks in. The Continuous Integration (CI) part runs a full suite of automated tests to ensure the new code doesn't break any existing functionality. If all tests pass, the Continuous Deployment (CD) part can automatically deploy the updated application to a staging server for final review or even directly to production, ensuring that new features and bug fixes are delivered to users quickly and safely.
+Role in the Project: These automated pipelines are triggered by code commits to the project's repository.
+Continuous Integration CI: Automatically builds the application and runs a suite of tests to verify the correctness of the new code and prevent regressions.
+Continuous Deployment CD: If the CI stage passes, the pipeline can automatically deploy the new version of the application to various environments, such as staging or production, enabling rapid and reliable software delivery.
 
 _Task 3:
 Objective: Understand how the database will be structured.
@@ -341,18 +343,54 @@ For each entity, list 3-5 important fields and describe how these entities are r
 
 # Database Design
 
-### Users
-id:
-name:
-surname:
-### Properties
-id:
+### 1. User
+This entity represents any individual who interacts with the platform, whether they are a guest booking a stay or a host listing a property.
 
-### Bookings
+id: A unique identifier for each user (Primary Key).
+name: The user's name.
+surname: The user's surname
+password: The user's password.
+email: The user's email address, used for login and notifications (must be unique).
+is_host: A boolean value to indicate if the user has privileges to list properties.
 
-### Payments
+### 2. Property
+This entity represents a rentable space listed by a host. It contains all the descriptive information about the listing.
 
-### Reviews
+id: A unique identifier for the property.
+host_id: A reference to the id of the user who owns this property.
+title: The title of the listing.
+description: A detailed text description of the space.
+price_per_night: The cost for a single night's stay.
+location: The address or geographical coordinates of the property.
+
+### 3. Booking
+This entity represents a reservation of a specific property by a guest for a defined period. It acts as the central link between a guest, a property, and a transaction.
+
+id: A unique identifier for the booking.
+guest_id: A reference to the id of the user who made the booking.
+property_id: A reference to the id of the property being booked.
+start_date: The check-in date for the reservation.
+end_date: The check-out date for the reservation.
+status: The current state of the booking.
+
+### 4. Review
+This entity captures the feedback a guest leaves for a property after their stay is complete.
+
+id: A unique identifier for the review.
+booking_id: A reference to the completed booking this review is for.
+rating: A numerical score.
+comment: The text content of the guest's review.
+created_at: A timestamp indicating when the review was submitted.
+
+### 5. Payment
+This entity records the financial transaction associated with a booking.
+
+id: A unique identifier for the payment.
+booking_id: A reference to the booking that this payment is for.
+amount: The total amount of money that was transacted.
+transaction_id: The unique ID provided by the payment gateway.
+status: The current state of the payment.
+
 
 _Task 4:
 Objective: Detail the features of the Airbnb Clone project.
