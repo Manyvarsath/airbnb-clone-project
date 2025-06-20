@@ -140,96 +140,9 @@ For each role, outline their key responsibilities and how they contribute to the
 _Objective: Begin exploring the UI components for the AirBnB Clone project.
 - Describe the components you plan to create, such as a Navbar, Property Card, and Footer_
 
-------------------------
+---
 # BackEnd
-------------------------
-🚀 Objective
-The backend for the Airbnb Clone project is designed to provide a robust and scalable foundation for managing user interactions, property listings, bookings, and payments. This backend will support various functionalities required to mimic the core features of Airbnb, ensuring a smooth experience for users and hosts.
-
-🏆 Project Goals
-User Management: Implement a secure system for user registration, authentication, and profile management.
-Property Management: Develop features for property listing creation, updates, and retrieval.
-Booking System: Create a booking mechanism for users to reserve properties and manage booking details.
-Payment Processing: Integrate a payment system to handle transactions and record payment details.
-Review System: Allow users to leave reviews and ratings for properties.
-Data Optimization: Ensure efficient data retrieval and storage through database optimizations.
-🛠️ Features Overview
-1. API Documentation
-OpenAPI Standard: The backend APIs are documented using the OpenAPI standard to ensure clarity and ease of integration.
-Django REST Framework: Provides a comprehensive RESTful API for handling CRUD operations on user and property data.
-GraphQL: Offers a flexible and efficient query mechanism for interacting with the backend.
-2. User Authentication
-Endpoints: /users/, /users/{user_id}/
-Features: Register new users, authenticate, and manage user profiles.
-3. Property Management
-Endpoints: /properties/, /properties/{property_id}/
-Features: Create, update, retrieve, and delete property listings.
-4. Booking System
-Endpoints: /bookings/, /bookings/{booking_id}/
-Features: Make, update, and manage bookings, including check-in and check-out details.
-5. Payment Processing
-Endpoints: /payments/
-Features: Handle payment transactions related to bookings.
-6. Review System
-Endpoints: /reviews/, /reviews/{review_id}/
-Features: Post and manage reviews for properties.
-7. Database Optimizations
-Indexing: Implement indexes for fast retrieval of frequently accessed data.
-Caching: Use caching strategies to reduce database load and improve performance.
-⚙️ Technology Stack
-Django: A high-level Python web framework used for building the RESTful API.
-Django REST Framework: Provides tools for creating and managing RESTful APIs.
-PostgreSQL: A powerful relational database used for data storage.
-GraphQL: Allows for flexible and efficient querying of data.
-Celery: For handling asynchronous tasks such as sending notifications or processing payments.
-Redis: Used for caching and session management.
-Docker: Containerization tool for consistent development and deployment environments.
-CI/CD Pipelines: Automated pipelines for testing and deploying code changes.
-👥 Team Roles
-Backend Developer: Responsible for implementing API endpoints, database schemas, and business logic.
-Database Administrator: Manages database design, indexing, and optimizations.
-DevOps Engineer: Handles deployment, monitoring, and scaling of the backend services.
-QA Engineer: Ensures the backend functionalities are thoroughly tested and meet quality standards.
-📈 API Documentation Overview
-REST API: Detailed documentation available through the OpenAPI standard, including endpoints for users, properties, bookings, and payments.
-GraphQL API: Provides a flexible query language for retrieving and manipulating data.
-📌 Endpoints Overview
-REST API Endpoints
-Users
-
-GET /users/ - List all users
-POST /users/ - Create a new user
-GET /users/{user_id}/ - Retrieve a specific user
-PUT /users/{user_id}/ - Update a specific user
-DELETE /users/{user_id}/ - Delete a specific user
-Properties
-
-GET /properties/ - List all properties
-POST /properties/ - Create a new property
-GET /properties/{property_id}/ - Retrieve a specific property
-PUT /properties/{property_id}/ - Update a specific property
-DELETE /properties/{property_id}/ - Delete a specific property
-Bookings
-
-GET /bookings/ - List all bookings
-POST /bookings/ - Create a new booking
-GET /bookings/{booking_id}/ - Retrieve a specific booking
-PUT /bookings/{booking_id}/ - Update a specific booking
-DELETE /bookings/{booking_id}/ - Delete a specific booking
-Payments
-
-POST /payments/ - Process a payment
-Reviews
-
-GET /reviews/ - List all reviews
-POST /reviews/ - Create a new review
-GET /reviews/{review_id}/ - Retrieve a specific review
-PUT /reviews/{review_id}/ - Update a specific review
-DELETE /reviews/{review_id}/ - Delete a specific review
-
--------------------------------
-Delete everything above this, before submitting for review
--------------------------------
+---
 
 ## Overview
 The server-side architecture for the Airbnb Clone project is engineered to offer a resilient and extensible framework. It is built to oversee user accounts, property data, reservations, and financial transactions. This core infrastructure will support the diverse functionalities needed to replicate Airbnb's essential features, guaranteeing a seamless experience for both guests and hosts.  
@@ -251,9 +164,9 @@ The server-side architecture for the Airbnb Clone project is engineered to offer
 **Redis:** Used for caching and session management.  
 **Docker:** Containerization tool for consistent development and deployment environments.  
 **CI/CD Pipelines:** Automated pipelines for testing and deploying code changes.  
-
-# Team Roles
-
+---
+## Team Roles
+---
 **Backend Developer:** Responsible for implementing API endpoints, database schemas, and business logic.  
 **Database Administrator:** Manages database design, indexing, and optimizations.  
 **DevOps Engineer:** Handles deployment, monitoring, and scaling of the backend services.  
@@ -264,9 +177,9 @@ The server-side architecture for the Airbnb Clone project is engineered to offer
 **UI/UX Designer:** Crafts the overall experience, visual interface of a digital product to make it intuitive, accessible, and enjoyable for users.  
 **Software Architect:** Designs the high-level system architecture, selects the technology stack, and defines technical standards for development.  
 **Test Automation Engineer:** Designs the test automation framework, and writes and maintains scripts for automated testing.  
-
-# Technology Stack
-
+---
+## Technology Stack
+---
 ### Django:  
 Django is a high-level Python web framework used to build the server-side application logic. Its philosophy provides a comprehensive suite of tools for rapid and secure web development, advantageous for a feature-rich platform with complex data models.  
 
@@ -299,7 +212,7 @@ Celery is a distributed task queue system for executing asynchronous operations 
 ### Redis:
 Redis is a high-performance, in-memory key-value data store. In this architecture, it serves two distinct functions: as a caching layer to reduce database load and as a message broker to facilitate communication between the web application and Celery.  
 
-**Role in the Project:**
+**Role in the Project:**  
        - Caching: Redis stores the results of frequent or expensive database queries. Serving this data directly from memory significantly reduces latency and lessens the load on the PostgreSQL database.  
        - Message Broker: Redis acts as the intermediary that holds tasks for Celery. The Django application places a task message in a Redis queue, and Celery workers retrieve and execute the task from that queue. It can also be used for session storage.  
 
@@ -314,11 +227,11 @@ CI/CD (Continuous Integration/Continuous Deployment) refers to a set of automate
 **Role in the Project:** These automated pipelines are triggered by code commits to the project's repository.  
        - Continuous Integration CI: Automatically builds the application and runs a suite of tests to verify the correctness of the new code and prevent regressions.  
        - Continuous Deployment CD: If the CI stage passes, the pipeline can automatically deploy the new version of the application to various environments, such as staging or production, enabling rapid and reliable software delivery.  
-
-# Database Design
-
-## Entities
-### 1. User
+---
+## Database Design
+---
+### Entities
+**1. User**  
 This entity represents any individual who interacts with the platform, whether they are a guest booking a stay or a host listing a property.  
 
 `id:` A unique identifier for each user.  
@@ -328,7 +241,7 @@ This entity represents any individual who interacts with the platform, whether t
 `email:` The user's email address.  
 `host:` A boolean value to indicate if the user has privileges to list properties.  
 
-### 2. Property
+**2. Property**  
 This entity represents a rentable space listed by a host. It contains all the descriptive information about the listing.  
 
 `id:` A unique identifier for the property.  
@@ -338,7 +251,7 @@ This entity represents a rentable space listed by a host. It contains all the de
 `price_per_night:` The cost for a single night's stay.  
 `location:` The address or geographical coordinates of the property.  
 
-### 3. Booking
+**3. Booking**  
 This entity represents a reservation of a specific property by a guest for a defined period. It acts as the central link between a guest, a property, and a transaction.  
 
 `id:` A unique identifier for the booking.  
@@ -348,7 +261,7 @@ This entity represents a reservation of a specific property by a guest for a def
 `end_date:` The check-out date for the reservation.  
 `status:` The current state of the booking.  
 
-### 4. Review
+**4. Review**  
 This entity captures the feedback a guest leaves for a property after their stay is complete.  
 
 `id:` A unique identifier for the review.  
@@ -357,7 +270,7 @@ This entity captures the feedback a guest leaves for a property after their stay
 `comment:` The text content of the guest's review.  
 `created_at:` A timestamp indicating when the review was submitted.  
 
-### 5. Payment
+**5. Payment**  
 This entity records the financial transaction associated with a booking.  
 
 `id:` A unique identifier for the payment.  
@@ -366,7 +279,7 @@ This entity records the financial transaction associated with a booking.
 `transaction_id:` The unique ID provided by the payment gateway.  
 `status:` The current state of the payment.  
 
-## Entity Relations
+### Entity Relations
 
 The relationships between these entities define the structure and business logic of the application.  
 
@@ -390,9 +303,9 @@ Implementation: The Review table has a unique booking_id field.
 A single Booking can be associated with multiple Payment records.  
 Each Payment record corresponds to exactly one Booking.  
 Implementation: The Payment table has a booking_id field.  
-
-# Feature Breakdown
-
+---
+## Feature Breakdown
+---
 The main features that will be implemented for the airbnb clone project, are the following:  
 
 ### API Documentation  
@@ -415,10 +328,10 @@ The review system allows guests to post ratings and comments about their stays, 
 
 ### Database Optimizations  
 This feature focuses on enhancing the backend's performance and responsiveness, especially as the amount of data grows. Techniques like indexing allow for faster data retrieval for common queries, while caching reduces the database load by storing frequently accessed information in a faster-access memory layer. These optimizations are vital for providing a smooth and fast user experience.  
-
-# API Security
-
-## Security Measures To Implement
+---
+## API Security
+---
+### Security Measures To Implement
 Securing the backend API is fundamental to protecting the platform and its users. The following measures will be implemented to create a robust defense against common threats:  
 
 **Authentication:** This is the process of verifying a user's identity. Before any sensitive action can be taken, the API must confirm that the user is who they claim to be. This is typically achieved by requiring a user to log in with a password, after which the server issues a secure, short-lived access token such as in the form of JSON Web Token or JWT, that must be included in all subsequent requests.  
@@ -431,7 +344,7 @@ Securing the backend API is fundamental to protecting the platform and its users
 
 **HTTPS/TLS Encryption:** All communication between the client applications and the server will be encrypted using HTTPS. This ensures that sensitive data, such as passwords, personal information, and authentication tokens, cannot be intercepted or read by attackers while it is in transit over the internet.  
 
-## Importance of Security
+### Importance of Security
 For this project, security is not a single feature but a critical requirement that underpins the entire platform's viability.
 
 **Protecting User Data:** The project handles significant amounts of Personal Identifiable Information (PII), including names, email addresses, and booking histories. A data breach would violate user privacy, expose them to identity theft, and result in a catastrophic loss of trust and potential legal action. Strong authentication and authorization are essential to ensure only the legitimate owner can access and manage their personal data.  
@@ -440,17 +353,18 @@ For this project, security is not a single feature but a critical requirement th
 
 **Maintaining Platform Integrity:** The value of the platform depends on the integrity of its content, such as bookings and reviews. A lack of security could allow malicious users to create fake bookings to block a property's availability, cancel legitimate reservations, or post fraudulent reviews to manipulate property ratings. Strict authorization rules, ensuring only the verified guest of a completed booking can leave a review, are vital for maintaining a fair and reliable ecosystem.  
 
-# CI/CD Pipeline
-
+---
+## CI/CD Pipeline
+---
 CI/CD stands for Continuous Integration and Continuous Delivery/Deployment. It is an automated practice that streamlines the process of building, testing, and deploying software. A pipeline is the sequence of automated steps that takes new code from a developer's machine and delivers it to production.  
 
-## Definitions  
+### Definitions  
 
 **Continuous Integration or CI:** This is the practice where developers frequently merge their code changes into a central repository. After each merge, an automated build and test sequence is run. The primary goal is to detect and fix integration bugs early in the development cycle.  
 
 **Continuous Delivery or CD:** This is the stage that follows a successful CI process. It automatically prepares and packages the tested code for release. The code is kept in a deployable state, allowing for a release to be triggered at any time with the push of a button. Continuous Deployment is an extension of this, where every change that passes all tests is automatically deployed to production without human intervention.  
 
-## Importance of CI/CD
+### Importance of CI/CD
 For our Airbnb clone project, CI/CD pipelines will be crucial for several reasons:
 
 **Ensuring Quality and Reliability:** The platform handles critical operations like payments and bookings. The automated testing in a CI pipeline ensures that every code change is rigorously validated, significantly reducing the risk of introducing bugs that could affect users or cause financial errors.  
@@ -459,7 +373,7 @@ For our Airbnb clone project, CI/CD pipelines will be crucial for several reason
 
 **Providing Consistent and Reliable Deployments:** Automation eliminates the manual errors that can occur during deployment. Every release is built, tested, and deployed using the exact same process, ensuring consistency and making the release process predictable and less risky.  
 
-## CI/CD Tools  
+### CI/CD Tools  
 
 We will be looking at several tools that may work together to create an effective CI/CD pipeline. The primary tools we will look at for this project will be:  
 
