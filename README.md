@@ -165,7 +165,6 @@ The server-side architecture for the Airbnb Clone project is engineered to offer
 **Docker:** Containerization tool for consistent development and deployment environments.  
 **CI/CD Pipelines:** Automated pipelines for testing and deploying code changes.  
 
----
 ## Team Roles  
 ---
 
@@ -180,7 +179,6 @@ The server-side architecture for the Airbnb Clone project is engineered to offer
 **Software Architect:** Designs the high-level system architecture, selects the technology stack, and defines technical standards for development.  
 **Test Automation Engineer:** Designs the test automation framework, and writes and maintains scripts for automated testing.  
 
----
 ## Technology Stack
 ---
 
@@ -232,7 +230,6 @@ CI/CD (Continuous Integration/Continuous Deployment) refers to a set of automate
        - Continuous Integration CI: Automatically builds the application and runs a suite of tests to verify the correctness of the new code and prevent regressions.  
        - Continuous Deployment CD: If the CI stage passes, the pipeline can automatically deploy the new version of the application to various environments, such as staging or production, enabling rapid and reliable software delivery.  
 
----
 ## Database Design
 ---
 
@@ -310,7 +307,6 @@ A single Booking can be associated with multiple Payment records.
 Each Payment record corresponds to exactly one Booking.  
 Implementation: The Payment table has a booking_id field.  
 
----
 ## Feature Breakdown
 ---
 
@@ -337,7 +333,6 @@ The review system allows guests to post ratings and comments about their stays, 
 ### Database Optimizations  
 This feature focuses on enhancing the backend's performance and responsiveness, especially as the amount of data grows. Techniques like indexing allow for faster data retrieval for common queries, while caching reduces the database load by storing frequently accessed information in a faster-access memory layer. These optimizations are vital for providing a smooth and fast user experience.  
 
----
 ## API Security
 ---
 
@@ -363,7 +358,6 @@ For this project, security is not a single feature but a critical requirement th
 
 **Maintaining Platform Integrity:** The value of the platform depends on the integrity of its content, such as bookings and reviews. A lack of security could allow malicious users to create fake bookings to block a property's availability, cancel legitimate reservations, or post fraudulent reviews to manipulate property ratings. Strict authorization rules, ensuring only the verified guest of a completed booking can leave a review, are vital for maintaining a fair and reliable ecosystem.  
 
----
 ## CI/CD Pipeline
 ---
 
