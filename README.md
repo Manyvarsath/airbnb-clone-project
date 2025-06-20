@@ -46,22 +46,60 @@ A well-designed, user-friendly booking system is critical to the project's succe
 
 ### Color Styles
 
-* **Primary:** #34967C  
-* **Secondary:** #FFA800  
-* **Primary text**: #222222  
-* **Secondary text:** #FFFFFF  
-* **Primary background**: #FFFFFF  
-* **Secondary background:** #222222  
+* **Primary:** `#34967C`  
+* **Secondary:** `#FFA800`  
+* **Primary text**: `#222222`  
+* **Secondary text:** `#FFFFFF`  
+* **Primary background**: `#FFFFFF`  
+* **Secondary background:** `#222222`
+
+### Typography
+
+* **Primary Font:** Quicksand (500 - 600), 16px - 30px  
+* **Headings:** Source Sans Pro (500 - 600), 24px - 94px  
+* **Secondary Text:** Quicksand (500), 12px - 17px  
+
+### Importance
+A well-designed, user-friendly booking system is critical to the project's success. It directly impacts user satisfaction and conversion rates by reducing friction in the booking process. By providing clear navigation, an intuitive interface, and a responsive design that works seamlessly on any device, the system can build user trust and make it easier for customers to move from Browse to completing a purchase.   
 
 ## 🧾 Project Roles and Responsibilities
-_Objective: Define and document the roles and responsibilities within the project.
-List and describe the roles such as Project Manager, Frontend Developers, Backend Developers, Designers, QA/Testers, DevOps Engineers, Product Owner, and Scrum Master.
-For each role, outline their key responsibilities and how they contribute to the project’s success._
+
+| Role | Responsibilities |
+| --- | --- |
+| **Frontend Developer** | Tasked with implementing the UI components based on the Figma designs. They write the HTML, CSS, and JavaScript code for the application. |
+| **Backend Developer** | Responsible for implementing API endpoints, database schemas, and business logic. |
+| **Scrum Master** | Acts as facilitator for the agile development process. Removes any impediments blocking the team's progres and organize agile ceremonies |
+| **DevOps Engineer** | Handles deployment, monitoring, and scaling of the backend services. |
+| **QA/Testers** | Responsible for ensuring the application is bug free and meets all requirements. Writes and executes test cases, performs manual and automated testing, and reports issues. |
+| **Product Owner** | Responsible for a product's vision, evolution, and that the product meets customer requirements. |
+| **Project Manager** | Manages the software development team, and ensures delivery within time and budget constraints. |
+| **UI/UX Designer** | Crafts the overall experience, visual interface of a digital product to make it intuitive, accessible, and enjoyable for users. |
 
 ## 📱 UI Component Patterns
-_Objective: Begin exploring the UI components for the AirBnB Clone project.
-- Describe the components you plan to create, such as a Navbar, Property Card, and Footer_
 
+### Navbar
+The Navbar will serve as the primary navigation header for the application, remaining consistently visible across most pages. It is designed to provide users with access to key functionalities and branding elements.
+
+* **Logo:** The site's logo, providing brand identity and a link back to the homepage.
+* **Search Bar:** A central element allowing users to initiate property searches.
+* **User Navigation:** A set of links or a dropdown menu for user-specific actions, such as accessing profile information, viewing bookings, and logging in or out.
+* **Responsive Menu:** A collapsible menu (often a "hamburger" icon) that contains the navigation links on smaller screens to ensure a clean mobile layout.
+
+## Property Card
+The Property Card is a self-contained component used to display a summary of a single property within the listing grid. It is designed to give users a quick, scannable overview of a listing, encouraging them to click for more details.
+
+* **Property Image:** A primary image or a small carousel showcasing the property.  
+* **Basic Details:** Essential information including the price per night, the property's location (city/country), and its average user rating.  
+* **Favorite Button:** An icon (like a heart) that allows logged-in users to save a property to a wishlist.  
+* **Responsive Layout:** The card's layout will adapt to different screen sizes, potentially stacking elements vertically on mobile devices.
+  
+## Footer
+The Footer will be located at the bottom of every page and will contain supplemental information, site-wide links, and legal notices.
+
+* **Site Links:** Navigation to important but less-frequented pages, such as "About Us," "Careers," or "Help Center."  
+* **Company Information:** Details about the company.  
+* **Social Media Links:** Icons linking to the company's social media profiles.  
+* **Copyright Information:** The standard copyright notice, including the current year.  
 
 # BackEnd
 
