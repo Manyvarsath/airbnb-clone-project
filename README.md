@@ -299,27 +299,21 @@ Role in the Project: When a user action initiates a long-running process, the ta
 ### Redis:
 Redis is a high-performance, in-memory key-value data store. In this architecture, it serves two distinct functions: as a caching layer to reduce database load and as a message broker to facilitate communication between the web application and Celery.
 
-Role in the Project:
-Caching: Redis stores the results of frequent or expensive database queries. Serving this data directly from memory significantly reduces latency and lessens the load on the PostgreSQL database.
-Message Broker: Redis acts as the intermediary that holds tasks for Celery. The Django application places a task message in a Redis queue, and Celery workers retrieve and execute the task from that queue. It can also be used for session storage.
+**Role in the Project:**
+    - Caching: Redis stores the results of frequent or expensive database queries. Serving this data directly from memory significantly reduces latency and lessens the load on the PostgreSQL database.
+    - Message Broker: Redis acts as the intermediary that holds tasks for Celery. The Django application places a task message in a Redis queue, and Celery workers retrieve and execute the task from that queue. It can also be used for session storage.
 
 ### Docker:
-Docker is a platform for developing, shipping, and running applications in containers. A container packages the application code along with all its dependencies, libraries, and configuration files into a single, isolated unit.
+Docker is a platform for developing, shipping, and running applications in containers. A container packages the application code along with all its dependencies, libraries, and configuration files into a single, isolated unit.  
 
-Role in the Project: Docker ensures environment parity between development, testing, and production. By containerizing the application and its services (PostgreSQL, Redis), developers can run the entire stack consistently on any machine. This practice eliminates environment-specific issues, streamlines the onboarding process for new developers, and provides a predictable target for deployment.
+**Role in the Project:** Docker ensures environment parity between development, testing, and production. By containerizing the application and its services (PostgreSQL, Redis), developers can run the entire stack consistently on any machine. This practice eliminates environment-specific issues, streamlines the onboarding process for new developers, and provides a predictable target for deployment.  
 
 ### CI/CD Pipelines:
-CI/CD (Continuous Integration/Continuous Deployment) refers to a set of automated practices that manage the build, testing, and deployment processes of the application.
+CI/CD (Continuous Integration/Continuous Deployment) refers to a set of automated practices that manage the build, testing, and deployment processes of the application.  
 
-Role in the Project: These automated pipelines are triggered by code commits to the project's repository.
-Continuous Integration CI: Automatically builds the application and runs a suite of tests to verify the correctness of the new code and prevent regressions.
-Continuous Deployment CD: If the CI stage passes, the pipeline can automatically deploy the new version of the application to various environments, such as staging or production, enabling rapid and reliable software delivery.
-
-_Task 3:
-Objective: Understand how the database will be structured.
-Instructions:
-List the key entities required for the project, such as Users, Properties, Bookings, Reviews, and Payments.
-For each entity, list 3-5 important fields and describe how these entities are related (e.g., a user can have multiple properties, a booking belongs to a property, etc.)._
+**Role in the Project:** These automated pipelines are triggered by code commits to the project's repository.  
+Continuous Integration CI: Automatically builds the application and runs a suite of tests to verify the correctness of the new code and prevent regressions.  
+Continuous Deployment CD: If the CI stage passes, the pipeline can automatically deploy the new version of the application to various environments, such as staging or production, enabling rapid and reliable software delivery.  
 
 # Database Design
 
@@ -327,41 +321,41 @@ For each entity, list 3-5 important fields and describe how these entities are r
 ### 1. User
 This entity represents any individual who interacts with the platform, whether they are a guest booking a stay or a host listing a property.  
 
-id: A unique identifier for each user.  
-name: The user's name.  
-surname: The user's surname.  
-password: The user's password.  
-email: The user's email address.  
-is_host: A boolean value to indicate if the user has privileges to list properties.  
+`id:` A unique identifier for each user.  
+`name:` The user's name.  
+`surname:` The user's surname.  
+`password:` The user's password.  
+`email:` The user's email address.  
+`host:` A boolean value to indicate if the user has privileges to list properties.  
 
 ### 2. Property
 This entity represents a rentable space listed by a host. It contains all the descriptive information about the listing.  
 
-id: A unique identifier for the property.  
-host_id: A reference to the id of the user who owns this property.  
-title: The title of the listing.  
-description: A detailed text description of the space.  
-price_per_night: The cost for a single night's stay.  
-location: The address or geographical coordinates of the property.  
+`id:` A unique identifier for the property.  
+`host_id:` A reference to the id of the user who owns this property.  
+`title:` The title of the listing.  
+`description:` A detailed text description of the space.  
+`price_per_night:` The cost for a single night's stay.  
+`location:` The address or geographical coordinates of the property.  
 
 ### 3. Booking
 This entity represents a reservation of a specific property by a guest for a defined period. It acts as the central link between a guest, a property, and a transaction.  
 
-id: A unique identifier for the booking.  
-guest_id: A reference to the id of the user who made the booking.  
-property_id: A reference to the id of the property being booked.  
-start_date: The check-in date for the reservation.  
-end_date: The check-out date for the reservation.  
-status: The current state of the booking.  
+`id:` A unique identifier for the booking.  
+`guest_id:` A reference to the id of the user who made the booking.  
+`property_id:` A reference to the id of the property being booked.  
+`start_date:` The check-in date for the reservation.  
+`end_date:` The check-out date for the reservation.  
+`status:` The current state of the booking.  
 
 ### 4. Review
 This entity captures the feedback a guest leaves for a property after their stay is complete.  
 
-id: A unique identifier for the review.  
-booking_id: A reference to the completed booking this review is for.  
-rating: A numerical score.  
-comment: The text content of the guest's review.  
-created_at: A timestamp indicating when the review was submitted.  
+`id:` A unique identifier for the review.  
+`booking_id:` A reference to the completed booking this review is for.  
+`rating:` A numerical score.  
+`comment:` The text content of the guest's review.  
+`created_at:` A timestamp indicating when the review was submitted.  
 
 ### 5. Payment
 This entity records the financial transaction associated with a booking.  
