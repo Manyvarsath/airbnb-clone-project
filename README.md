@@ -47,7 +47,10 @@ A well-designed, user-friendly booking system is critical to the project's succe
 ### Color Styles
 
 * Primary color: #34967C
-* - ![#34967C](https://placehold.co/15x15/#34967C/#34967C.png) `#34967C`
+ 
+<table>
+<tr><td style="background-color: #34967C;">This might not render with color</td></tr>
+</table>
 Secondary Color- : #FFA800
 Primary text : #222222
 Secondary text : #FFFFFF
