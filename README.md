@@ -323,165 +323,128 @@ For each entity, list 3-5 important fields and describe how these entities are r
 
 # Database Design
 
+## Entities
 ### 1. User
-This entity represents any individual who interacts with the platform, whether they are a guest booking a stay or a host listing a property.
+This entity represents any individual who interacts with the platform, whether they are a guest booking a stay or a host listing a property.  
 
-id: A unique identifier for each user (Primary Key).
-name: The user's name.
-surname: The user's surname
-password: The user's password.
-email: The user's email address, used for login and notifications (must be unique).
-is_host: A boolean value to indicate if the user has privileges to list properties.
+id: A unique identifier for each user.  
+name: The user's name.  
+surname: The user's surname.  
+password: The user's password.  
+email: The user's email address.  
+is_host: A boolean value to indicate if the user has privileges to list properties.  
 
 ### 2. Property
-This entity represents a rentable space listed by a host. It contains all the descriptive information about the listing.
+This entity represents a rentable space listed by a host. It contains all the descriptive information about the listing.  
 
-id: A unique identifier for the property.
-host_id: A reference to the id of the user who owns this property.
-title: The title of the listing.
-description: A detailed text description of the space.
-price_per_night: The cost for a single night's stay.
-location: The address or geographical coordinates of the property.
+id: A unique identifier for the property.  
+host_id: A reference to the id of the user who owns this property.  
+title: The title of the listing.  
+description: A detailed text description of the space.  
+price_per_night: The cost for a single night's stay.  
+location: The address or geographical coordinates of the property.  
 
 ### 3. Booking
-This entity represents a reservation of a specific property by a guest for a defined period. It acts as the central link between a guest, a property, and a transaction.
+This entity represents a reservation of a specific property by a guest for a defined period. It acts as the central link between a guest, a property, and a transaction.  
 
-id: A unique identifier for the booking.
-guest_id: A reference to the id of the user who made the booking.
-property_id: A reference to the id of the property being booked.
-start_date: The check-in date for the reservation.
-end_date: The check-out date for the reservation.
-status: The current state of the booking.
+id: A unique identifier for the booking.  
+guest_id: A reference to the id of the user who made the booking.  
+property_id: A reference to the id of the property being booked.  
+start_date: The check-in date for the reservation.  
+end_date: The check-out date for the reservation.  
+status: The current state of the booking.  
 
 ### 4. Review
-This entity captures the feedback a guest leaves for a property after their stay is complete.
+This entity captures the feedback a guest leaves for a property after their stay is complete.  
 
-id: A unique identifier for the review.
-booking_id: A reference to the completed booking this review is for.
-rating: A numerical score.
-comment: The text content of the guest's review.
-created_at: A timestamp indicating when the review was submitted.
+id: A unique identifier for the review.  
+booking_id: A reference to the completed booking this review is for.  
+rating: A numerical score.  
+comment: The text content of the guest's review.  
+created_at: A timestamp indicating when the review was submitted.  
 
 ### 5. Payment
-This entity records the financial transaction associated with a booking.
+This entity records the financial transaction associated with a booking.  
 
-id: A unique identifier for the payment.
-booking_id: A reference to the booking that this payment is for.
-amount: The total amount of money that was transacted.
-transaction_id: The unique ID provided by the payment gateway.
-status: The current state of the payment.
-
-Of course. Here is a breakdown of the key entities, their important fields, and how they relate to one another to form the database structure for the Airbnb clone project.
-
-Key Database Entities
-1. User
-This entity represents any individual who interacts with the platform, whether they are a guest booking a stay or a host listing a property.
-
-Important Fields:
-id: A unique identifier for each user (Primary Key).
-email: The user's email address, used for login and notifications (must be unique).
-password_hash: The user's password, stored securely as a hash, not in plain text.
-full_name: The user's full name.
-is_host: A boolean value (true/false) to indicate if the user has privileges to list properties.
-2. Property
-This entity represents a rentable space listed by a host. It contains all the descriptive information about the listing.
-
-Important Fields:
-id: A unique identifier for the property (Primary Key).
-host_id: A reference to the id of the user who owns this property (Foreign Key).
-title: The title of the listing (e.g., "Cozy Downtown Loft with City View").
-description: A detailed text description of the space.
-price_per_night: The cost for a single night's stay.
-location: The address or geographical coordinates of the property.
-3. Booking
-This entity represents a reservation of a specific property by a guest for a defined period. It acts as the central link between a guest, a property, and a transaction.
-
-Important Fields:
-id: A unique identifier for the booking (Primary Key).
-guest_id: A reference to the id of the user who made the booking (Foreign Key).
-property_id: A reference to the id of the property being booked (Foreign Key).
-start_date / end_date: The check-in and check-out dates for the reservation.
-status: The current state of the booking (e.g., pending, confirmed, cancelled).
-4. Review
-This entity captures the feedback a guest leaves for a property after their stay is complete.
-
-Important Fields:
-id: A unique identifier for the review (Primary Key).
-booking_id: A reference to the completed booking this review is for (Foreign Key). This ensures only guests who have stayed can leave a review.
-rating: A numerical score, typically on a scale of 1 to 5.
-comment: The text content of the guest's review.
-created_at: A timestamp indicating when the review was submitted.
-5. Payment
-This entity records the financial transaction associated with a booking.
-
-Important Fields:
-id: A unique identifier for the payment (Primary Key).
-booking_id: A reference to the booking that this payment is for (Foreign Key).
-amount: The total amount of money that was transacted.
-transaction_id: The unique ID provided by the external payment gateway (e.g., Stripe, PayPal) for reconciliation.
-status: The current state of the payment (e.g., succeeded, failed, refunded).
+id: A unique identifier for the payment.  
+booking_id: A reference to the booking that this payment is for.  
+amount: The total amount of money that was transacted.  
+transaction_id: The unique ID provided by the payment gateway.  
+status: The current state of the payment.  
 
 ## Entity Relations
 
-The relationships between these entities define the structure and business logic of the application.
+The relationships between these entities define the structure and business logic of the application.  
 
-User and Property (One-to-Many):
-A single user can own and list from zero to multiple Properties.
-Each Property belongs to exactly one User.
-Implementation: The Property table has a host_id field that points to a User's id.
+User and Property (One-to-Many):  
+A single user can own and list from zero to multiple Properties.  
+Each Property belongs to exactly one User.  
+Implementation: The Property table has a host_id field that points to a User's id.  
 
-User/Property and Booking (Many-to-Many via Booking):
-A User can make multiple Bookings.
-A Property can have multiple Bookings over time.
-The Booking entity connects them: each Booking record belongs to exactly one User and one Property.
-Implementation: The Booking table has both a guest_id and a property_id.
+User/Property and Booking (Many-to-Many via Booking):  
+A User can make multiple Bookings.  
+A Property can have multiple Bookings over time.  
+The Booking entity connects them: each Booking record belongs to exactly one User and one Property.  
+Implementation: The Booking table has both a guest_id and a property_id.  
 
-Booking and Review (One-to-One):
-A completed Booking can have exactly one Review.
-Each Review is tied to a single Booking.
-Implementation: The Review table has a unique booking_id field.
+Booking and Review (One-to-One):  
+A completed Booking can have exactly one Review.  
+Each Review is tied to a single Booking.  
+Implementation: The Review table has a unique booking_id field.  
 
-Booking and Payment (One-to-Many):
-A single Booking can be associated with multiple Payment records.
-Each Payment record corresponds to exactly one Booking.
-Implementation: The Payment table has a booking_id field.
-
-_Task 4:
-Objective: Detail the features of the Airbnb Clone project.
-Instructions:
-List the main features (e.g., user management, property management, booking system, etc.) as outlined in the project overview.
-Provide a 2-3 sentence description of each feature, explaining how it contributes to the project._
+Booking and Payment (One-to-Many):  
+A single Booking can be associated with multiple Payment records.  
+Each Payment record corresponds to exactly one Booking.  
+Implementation: The Payment table has a booking_id field.  
 
 # Feature Breakdown
 
+The main features that will be implemented for the airbnb clone project, are the following:
+
 ## API Documentation
-This feature provides a clear and standardized guide for how client applications can communicate with the backend. By using standards like OpenAPI alongside tools like DRF and GraphQL, the project ensures that developers can easily understand and interact with the available data and functionalities. This accelerates development and simplifies integration between the frontend and backend systems.
+This feature provides a clear and standardized guide for how client applications can communicate with the backend. By using standards like OpenAPI alongside tools like DRF and GraphQL, the project ensures that developers can easily understand and interact with the available data and functionalities. This accelerates development and simplifies integration between the frontend and backend systems.  
 
 ## User Authentication
-User Authentication is responsible for managing all aspects of user accounts, including secure registration, login, and profile management. It forms the foundation of the platform's security and personalization, ensuring that all actions are performed by verified users. This system is essential for establishing trust and distinguishing between different roles, such as guests and hosts.
+User Authentication is responsible for managing all aspects of user accounts, including secure registration, login, and profile management. It forms the foundation of the platform's security and personalization, ensuring that all actions are performed by verified users. This system is essential for establishing trust and distinguishing between different roles, such as guests and hosts.  
 
 ## Property Management
-This feature gives hosts the tools to create, view, update, and delete their property listings through dedicated API endpoints. It serves as the content management system for the platform's core product—the rental properties. This functionality is critical for hosts to accurately present their offerings, including details like price, availability, and amenities.
+This feature gives hosts the tools to create, view, update, and delete their property listings through dedicated API endpoints. It serves as the content management system for the platform's core product—the rental properties. This functionality is critical for hosts to accurately present their offerings, including details like price, availability, and amenities.  
 
 ## Booking System
-The booking system is the transactional heart of the application, allowing guests to reserve properties for specific dates. It manages the entire reservation lifecycle, from creation and modification to finalization, ensuring that availability is handled correctly to prevent double-bookings. This feature directly connects guests with properties, turning listings into revenue-generating assets.
+The booking system is the transactional heart of the application, allowing guests to reserve properties for specific dates. It manages the entire reservation lifecycle, from creation and modification to finalization, ensuring that availability is handled correctly to prevent double-bookings. This feature directly connects guests with properties, turning listings into revenue-generating assets.  
 
 ## Payment Processing
-This feature handles all financial transactions required to confirm a booking. It integrates with payment gateways to securely process payments from guests and manage the flow of funds. A reliable payment system is crucial for monetizing the platform and providing a trustworthy transaction experience for both guests and hosts.
+This feature handles all financial transactions required to confirm a booking. It integrates with payment gateways to securely process payments from guests and manage the flow of funds. A reliable payment system is crucial for monetizing the platform and providing a trustworthy transaction experience for both guests and hosts.  
 
 ## Review System
-The review system allows guests to post ratings and comments about their stays, building a community-driven layer of trust and quality control. By enabling users to share their experiences, this feature provides valuable social proof that helps future guests make informed decisions. It also gives hosts feedback and encourages high standards of service.
+The review system allows guests to post ratings and comments about their stays, building a community-driven layer of trust and quality control. By enabling users to share their experiences, this feature provides valuable social proof that helps future guests make informed decisions. It also gives hosts feedback and encourages high standards of service.  
 
 ## Database Optimizations
-This feature focuses on enhancing the backend's performance and responsiveness, especially as the amount of data grows. Techniques like indexing allow for faster data retrieval for common queries (like searching for properties), while caching reduces the database load by storing frequently accessed information in a faster-access memory layer. These optimizations are vital for providing a smooth and fast user experience.
-
-_Task 5:
-Objective: Understand the importance of securing the backend APIs.
-Instructions:
-Explain the key security measures that will be implemented (e.g., authentication, authorization, rate limiting).
-Provide a brief explanation of why security is crucial for each key area of the project (e.g., protecting user data, securing payments, etc.)._
+This feature focuses on enhancing the backend's performance and responsiveness, especially as the amount of data grows. Techniques like indexing allow for faster data retrieval for common queries, while caching reduces the database load by storing frequently accessed information in a faster-access memory layer. These optimizations are vital for providing a smooth and fast user experience.  
 
 # API Security
+
+## Security Measures To Implement
+Securing the backend API is fundamental to protecting the platform and its users. The following measures will be implemented to create a robust defense against common threats:  
+
+Authentication: This is the process of verifying a user's identity. Before any sensitive action can be taken, the API must confirm that the user is who they claim to be. This is typically achieved by requiring a user to log in with a password, after which the server issues a secure, short-lived access token such as in the form of JSON Web Token or JWT, that must be included in all subsequent requests.  
+
+Authorization: Once a user is authenticated, authorization determines what they are allowed to do. The system will enforce strict permission checks on every request to ensure users can only access and modify data they own or are permitted to see. For example, a host can edit their own property listings but cannot edit another host's.  
+
+Rate Limiting: This measure protects the API from abuse by limiting the number of requests a single user or IP address can make within a specific time frame. It is a critical defense against brute-force attacks on login endpoints and prevents malicious actors from overwhelming the server with requests, which could lead to a Denial of Service attack that makes the platform unavailable for legitimate users.  
+
+Input Validation: All data received by the API from a client will be rigorously validated. The system will check that the data is in the expected format and does not contain malicious code. This is a primary defense against injection attacks, where an attacker attempts to trick the application into executing unintended commands.  
+
+HTTPS/TLS Encryption: All communication between the client applications and the server will be encrypted using HTTPS. This ensures that sensitive data, such as passwords, personal information, and authentication tokens, cannot be intercepted or read by attackers while it is in transit over the internet.  
+
+## Importance of Security
+For this project, security is not a single feature but a critical requirement that underpins the entire platform's viability.
+
+Protecting User Data: The project handles significant amounts of Personal Identifiable Information (PII), including names, email addresses, and booking histories. A data breach would violate user privacy, expose them to identity theft, and result in a catastrophic loss of trust and potential legal action. Strong authentication and authorization are essential to ensure only the legitimate owner can access and manage their personal data.  
+
+Securing Payments and Financials: The integrity of payment processing is non-negotiable. Without robust security, attackers could intercept financial data, authorize fraudulent charges, or divert funds, leading to direct financial losses for users and the platform. Encrypting communications with HTTPS and securely managing API keys for payment gateways are crucial for protecting every transaction.  
+
+Maintaining Platform Integrity: The value of the platform depends on the integrity of its content, such as bookings and reviews. A lack of security could allow malicious users to create fake bookings to block a property's availability, cancel legitimate reservations, or post fraudulent reviews to manipulate property ratings. Strict authorization rules—ensuring only the verified guest of a completed booking can leave a review—are vital for maintaining a fair and reliable ecosystem.  
 
 _Task 6:
 Objective: Understand how CI/CD pipelines contribute to the development process.
@@ -490,3 +453,28 @@ Briefly explain what CI/CD pipelines are and why they are important for the proj
 Mention the tools that could be used for this (e.g., GitHub Actions, Docker, etc.)._
 
 # CI/CD Pipeline
+
+CI/CD stands for Continuous Integration and Continuous Delivery/Deployment. It is an automated practice that streamlines the process of building, testing, and deploying software. A pipeline is the sequence of automated steps that takes new code from a developer's machine and delivers it to production.  
+
+### Definitions  
+
+Continuous Integration or CI: This is the practice where developers frequently merge their code changes into a central repository. After each merge, an automated build and test sequence is run. The primary goal is to detect and fix integration bugs early in the development cycle.  
+
+Continuous Delivery or CD: This is the stage that follows a successful CI process. It automatically prepares and packages the tested code for release. The code is kept in a deployable state, allowing for a release to be triggered at any time with the push of a button. Continuous Deployment is an extension of this, where every change that passes all tests is automatically deployed to production without human intervention.  
+
+### Importance of CI/CD
+For our Airbnb clone project, CI/CD pipelines will be crucial for several reasons:
+
+Ensuring Quality and Reliability: The platform handles critical operations like payments and bookings. The automated testing in a CI pipeline ensures that every code change is rigorously validated, significantly reducing the risk of introducing bugs that could affect users or cause financial errors.
+Increasing Development Speed: By automating the repetitive tasks of testing and deploying, developers can focus on building new features. This accelerates the development lifecycle, allowing the platform to evolve and respond to user needs more quickly.
+Providing Consistent and Reliable Deployments: Automation eliminates the manual errors that can occur during deployment. Every release is built, tested, and deployed using the exact same process, ensuring consistency and making the release process predictable and less risky.
+
+### CI/CD Tools  
+
+We will be looking at several tools that may work together to create an effective CI/CD pipeline. The primary tools we will look at for this project will be:  
+
+GitHub Actions: This is the orchestrator of the pipeline. As a CI/CD platform integrated directly into GitHub, it can be configured to automatically trigger workflows which are a series of jobs, whenever code is pushed to the repository. These workflows can be used to run tests, build artifacts, and deploy the application.  
+
+Docker: This is the containerization tool that will be used for packaging the application. A key step in the CI pipeline will be to build a Docker image containing the Django application and all its dependencies. This image will be consistent and portable, which will ensure the application runs the same way in the testing environment as it does in production.  
+
+Other Alternatives: Other tools such as Jenkins or Gitlab CI/CD could also be used to achieve the same outcome.
