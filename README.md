@@ -402,7 +402,7 @@ This feature provides a clear and standardized guide for how client applications
 User Authentication is responsible for managing all aspects of user accounts, including secure registration, login, and profile management. It forms the foundation of the platform's security and personalization, ensuring that all actions are performed by verified users. This system is essential for establishing trust and distinguishing between different roles, such as guests and hosts.  
 
 ### Property Management  
-This feature gives hosts the tools to create, view, update, and delete their property listings through dedicated API endpoints. It serves as the content management system for the platform's core product—the rental properties. This functionality is critical for hosts to accurately present their offerings, including details like price, availability, and amenities.  
+This feature gives hosts the tools to create, view, update, and delete their property listings through dedicated API endpoints. It serves as the content management system for the platform's core product, the rental properties. This functionality is critical for hosts to accurately present their offerings, including details like price, availability, and amenities.  
 
 ### Booking System  
 The booking system is the transactional heart of the application, allowing guests to reserve properties for specific dates. It manages the entire reservation lifecycle, from creation and modification to finalization, ensuring that availability is handled correctly to prevent double-bookings. This feature directly connects guests with properties, turning listings into revenue-generating assets.  
