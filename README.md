@@ -231,11 +231,6 @@ DELETE /reviews/{review_id}/ - Delete a specific review
 Delete everything above this, before submitting for review
 -------------------------------
 
-_Task 0:
-Objective: Set up your GitHub repository for the AirBnB Clone project.
-Instructions:
-In the README.md, provide a brief overview of the project, including the project goals, the tech stack._
-
 ## Overview
 The server-side architecture for the Airbnb Clone project is engineered to offer a resilient and extensible framework. It is built to oversee user accounts, property data, reservations, and financial transactions. This core infrastructure will support the diverse functionalities needed to replicate Airbnb's essential features, guaranteeing a seamless experience for both guests and hosts.
 
@@ -257,12 +252,7 @@ The server-side architecture for the Airbnb Clone project is engineered to offer
 **Docker:** Containerization tool for consistent development and deployment environments.  
 **CI/CD Pipelines:** Automated pipelines for testing and deploying code changes.  
 
-_Task 1:
-Objective: Understand the various roles within the project team.
-Instructions:
-Based on the roles outlined in the project overview (e.g., Backend Developer, Database Administrator, etc.) and from the ITRexGroup blog, provide a brief description of each role and their responsibility in the project._
-
-## Team Roles
+# Team Roles
 
 **Backend Developer:** Responsible for implementing API endpoints, database schemas, and business logic.  
 **Database Administrator:** Manages database design, indexing, and optimizations.  
@@ -275,39 +265,29 @@ Based on the roles outlined in the project overview (e.g., Backend Developer, Da
 **Software Architect:** Designs the high-level system architecture, selects the technology stack, and defines technical standards for development.  
 **Test Automation Engineer:** Designs the test automation framework, and writes and maintains scripts for automated testing.  
 
-_Software Developer: LoremIpsumDolor_
-
-
-
-_Task 2:
-Objective: Deepen your understanding of the project’s technology stack.
-Instructions:
-List the technologies mentioned in the project overview (e.g., Django, PostgreSQL, GraphQL, etc.).
-For each technology, explain its purpose in the project (e.g., “Django: a web framework for building RESTful APIs”)._
-
 # Technology Stack
 
-## Django:  
+### Django:  
 Django is a high-level Python web framework used to build the server-side application logic. Its philosophy provides a comprehensive suite of tools for rapid and secure web development, advantageous for a feature-rich platform with complex data models.
 
 Role in the Project: Django's Object-Relational Mapper abstracts database operations, which will allow us to define and interact with data models using Python. The framework includes a built-in authentication system for managing user accounts and a default admin panel for administrative data management.
 
-## Django REST Framework:  
+### Django REST Framework:  
 Django REST Framework is a powerful and flexible toolkit that builds upon Django to create Web APIs. It provides the necessary components to expose the application's data and business logic to external clients, such as a web frontend or mobile application.
 
 Role in the Project: Django REST Framework will be used to construct the RESTful API endpoints such as /api/properties/, /api/bookings/. Its primary functions include serializing Django querysets and model instances into JSON format, handling request authentication to secure endpoints, and managing permissions to control user access to specific resources.
 
-## PostgreSQL:  
+### PostgreSQL:  
 PostgreSQL is an open-source object-relational database system used for the primary persistence of all application data. It is selected for its high degree of compliance with the SQL standard, performance with complex queries, and robust features that ensure data integrity.
 
 Role in the Project: PostgreSQL stores all critical information, including user credentials, property details, pricing, availability calendars, booking histories, reviews, and transaction records. Its support for ACID (Atomicity, Consistency, Isolation, Durability) transactions is essential. This guarantees that operations like a booking and its corresponding payment are processed as a single, indivisible unit, preventing data corruption by ensuring the operation either completes successfully or fails without leaving the database in an inconsistent state.
 
-## GraphQL:  
+### GraphQL:  
 GraphQL is a query language for APIs that provides a more efficient and flexible alternative to traditional REST for data fetching. It enables a client to request a specific set of data fields from the server in a single API call.
 
 Role in the Project: Instead of relying on multiple REST endpoints that return fixed data structures, GraphQL allows the frontend client to define its exact data requirements. For example, a property list view can query for only the title and price, while a detailed property view can query for all associated data. This capability reduces over-fetching of data, minimizes the network payload, and improves application performance.
 
-## Celery:
+### Celery:
 Celery is a distributed task queue system for executing asynchronous operations outside of the main application's request-response cycle. This is used for tasks that are too time-consuming to be handled synchronously without negatively impacting user experience.
 
 Role in the Project: When a user action initiates a long-running process, the task is offloaded to a Celery worker. For example, after a booking is confirmed, Celery manages the background execution of tasks such as:
@@ -316,19 +296,19 @@ Role in the Project: When a user action initiates a long-running process, the ta
        - Initiating payment processing via a third-party gateway.
        - Updating search indexes or availability data.  
 
-## Redis:
+### Redis:
 Redis is a high-performance, in-memory key-value data store. In this architecture, it serves two distinct functions: as a caching layer to reduce database load and as a message broker to facilitate communication between the web application and Celery.
 
 Role in the Project:
 Caching: Redis stores the results of frequent or expensive database queries. Serving this data directly from memory significantly reduces latency and lessens the load on the PostgreSQL database.
 Message Broker: Redis acts as the intermediary that holds tasks for Celery. The Django application places a task message in a Redis queue, and Celery workers retrieve and execute the task from that queue. It can also be used for session storage.
 
-## Docker:
+### Docker:
 Docker is a platform for developing, shipping, and running applications in containers. A container packages the application code along with all its dependencies, libraries, and configuration files into a single, isolated unit.
 
 Role in the Project: Docker ensures environment parity between development, testing, and production. By containerizing the application and its services (PostgreSQL, Redis), developers can run the entire stack consistently on any machine. This practice eliminates environment-specific issues, streamlines the onboarding process for new developers, and provides a predictable target for deployment.
 
-## CI/CD Pipelines:
+### CI/CD Pipelines:
 CI/CD (Continuous Integration/Continuous Deployment) refers to a set of automated practices that manage the build, testing, and deployment processes of the application.
 
 Role in the Project: These automated pipelines are triggered by code commits to the project's repository.
@@ -391,6 +371,80 @@ amount: The total amount of money that was transacted.
 transaction_id: The unique ID provided by the payment gateway.
 status: The current state of the payment.
 
+Of course. Here is a breakdown of the key entities, their important fields, and how they relate to one another to form the database structure for the Airbnb clone project.
+
+Key Database Entities
+1. User
+This entity represents any individual who interacts with the platform, whether they are a guest booking a stay or a host listing a property.
+
+Important Fields:
+id: A unique identifier for each user (Primary Key).
+email: The user's email address, used for login and notifications (must be unique).
+password_hash: The user's password, stored securely as a hash, not in plain text.
+full_name: The user's full name.
+is_host: A boolean value (true/false) to indicate if the user has privileges to list properties.
+2. Property
+This entity represents a rentable space listed by a host. It contains all the descriptive information about the listing.
+
+Important Fields:
+id: A unique identifier for the property (Primary Key).
+host_id: A reference to the id of the user who owns this property (Foreign Key).
+title: The title of the listing (e.g., "Cozy Downtown Loft with City View").
+description: A detailed text description of the space.
+price_per_night: The cost for a single night's stay.
+location: The address or geographical coordinates of the property.
+3. Booking
+This entity represents a reservation of a specific property by a guest for a defined period. It acts as the central link between a guest, a property, and a transaction.
+
+Important Fields:
+id: A unique identifier for the booking (Primary Key).
+guest_id: A reference to the id of the user who made the booking (Foreign Key).
+property_id: A reference to the id of the property being booked (Foreign Key).
+start_date / end_date: The check-in and check-out dates for the reservation.
+status: The current state of the booking (e.g., pending, confirmed, cancelled).
+4. Review
+This entity captures the feedback a guest leaves for a property after their stay is complete.
+
+Important Fields:
+id: A unique identifier for the review (Primary Key).
+booking_id: A reference to the completed booking this review is for (Foreign Key). This ensures only guests who have stayed can leave a review.
+rating: A numerical score, typically on a scale of 1 to 5.
+comment: The text content of the guest's review.
+created_at: A timestamp indicating when the review was submitted.
+5. Payment
+This entity records the financial transaction associated with a booking.
+
+Important Fields:
+id: A unique identifier for the payment (Primary Key).
+booking_id: A reference to the booking that this payment is for (Foreign Key).
+amount: The total amount of money that was transacted.
+transaction_id: The unique ID provided by the external payment gateway (e.g., Stripe, PayPal) for reconciliation.
+status: The current state of the payment (e.g., succeeded, failed, refunded).
+
+## Entity Relations
+
+The relationships between these entities define the structure and business logic of the application.
+
+User and Property (One-to-Many):
+A single user can own and list from zero to multiple Properties.
+Each Property belongs to exactly one User.
+Implementation: The Property table has a host_id field that points to a User's id.
+
+User/Property and Booking (Many-to-Many via Booking):
+A User can make multiple Bookings.
+A Property can have multiple Bookings over time.
+The Booking entity connects them: each Booking record belongs to exactly one User and one Property.
+Implementation: The Booking table has both a guest_id and a property_id.
+
+Booking and Review (One-to-One):
+A completed Booking can have exactly one Review.
+Each Review is tied to a single Booking.
+Implementation: The Review table has a unique booking_id field.
+
+Booking and Payment (One-to-Many):
+A single Booking can be associated with multiple Payment records.
+Each Payment record corresponds to exactly one Booking.
+Implementation: The Payment table has a booking_id field.
 
 _Task 4:
 Objective: Detail the features of the Airbnb Clone project.
@@ -399,6 +453,27 @@ List the main features (e.g., user management, property management, booking syst
 Provide a 2-3 sentence description of each feature, explaining how it contributes to the project._
 
 # Feature Breakdown
+
+## API Documentation
+This feature provides a clear and standardized guide for how client applications can communicate with the backend. By using standards like OpenAPI alongside tools like DRF and GraphQL, the project ensures that developers can easily understand and interact with the available data and functionalities. This accelerates development and simplifies integration between the frontend and backend systems.
+
+## User Authentication
+User Authentication is responsible for managing all aspects of user accounts, including secure registration, login, and profile management. It forms the foundation of the platform's security and personalization, ensuring that all actions are performed by verified users. This system is essential for establishing trust and distinguishing between different roles, such as guests and hosts.
+
+## Property Management
+This feature gives hosts the tools to create, view, update, and delete their property listings through dedicated API endpoints. It serves as the content management system for the platform's core product—the rental properties. This functionality is critical for hosts to accurately present their offerings, including details like price, availability, and amenities.
+
+## Booking System
+The booking system is the transactional heart of the application, allowing guests to reserve properties for specific dates. It manages the entire reservation lifecycle, from creation and modification to finalization, ensuring that availability is handled correctly to prevent double-bookings. This feature directly connects guests with properties, turning listings into revenue-generating assets.
+
+## Payment Processing
+This feature handles all financial transactions required to confirm a booking. It integrates with payment gateways to securely process payments from guests and manage the flow of funds. A reliable payment system is crucial for monetizing the platform and providing a trustworthy transaction experience for both guests and hosts.
+
+## Review System
+The review system allows guests to post ratings and comments about their stays, building a community-driven layer of trust and quality control. By enabling users to share their experiences, this feature provides valuable social proof that helps future guests make informed decisions. It also gives hosts feedback and encourages high standards of service.
+
+## Database Optimizations
+This feature focuses on enhancing the backend's performance and responsiveness, especially as the amount of data grows. Techniques like indexing allow for faster data retrieval for common queries (like searching for properties), while caching reduces the database load by storing frequently accessed information in a faster-access memory layer. These optimizations are vital for providing a smooth and fast user experience.
 
 _Task 5:
 Objective: Understand the importance of securing the backend APIs.
