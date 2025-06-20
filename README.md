@@ -164,9 +164,11 @@ The server-side architecture for the Airbnb Clone project is engineered to offer
 **Redis:** Used for caching and session management.  
 **Docker:** Containerization tool for consistent development and deployment environments.  
 **CI/CD Pipelines:** Automated pipelines for testing and deploying code changes.  
+
 ---
-## Team Roles
+## Team Roles  
 ---
+
 **Backend Developer:** Responsible for implementing API endpoints, database schemas, and business logic.  
 **Database Administrator:** Manages database design, indexing, and optimizations.  
 **DevOps Engineer:** Handles deployment, monitoring, and scaling of the backend services.  
@@ -177,9 +179,11 @@ The server-side architecture for the Airbnb Clone project is engineered to offer
 **UI/UX Designer:** Crafts the overall experience, visual interface of a digital product to make it intuitive, accessible, and enjoyable for users.  
 **Software Architect:** Designs the high-level system architecture, selects the technology stack, and defines technical standards for development.  
 **Test Automation Engineer:** Designs the test automation framework, and writes and maintains scripts for automated testing.  
+
 ---
 ## Technology Stack
 ---
+
 ### Django:  
 Django is a high-level Python web framework used to build the server-side application logic. Its philosophy provides a comprehensive suite of tools for rapid and secure web development, advantageous for a feature-rich platform with complex data models.  
 
@@ -227,9 +231,11 @@ CI/CD (Continuous Integration/Continuous Deployment) refers to a set of automate
 **Role in the Project:** These automated pipelines are triggered by code commits to the project's repository.  
        - Continuous Integration CI: Automatically builds the application and runs a suite of tests to verify the correctness of the new code and prevent regressions.  
        - Continuous Deployment CD: If the CI stage passes, the pipeline can automatically deploy the new version of the application to various environments, such as staging or production, enabling rapid and reliable software delivery.  
+
 ---
 ## Database Design
 ---
+
 ### Entities
 **1. User**  
 This entity represents any individual who interacts with the platform, whether they are a guest booking a stay or a host listing a property.  
@@ -303,9 +309,11 @@ Implementation: The Review table has a unique booking_id field.
 A single Booking can be associated with multiple Payment records.  
 Each Payment record corresponds to exactly one Booking.  
 Implementation: The Payment table has a booking_id field.  
+
 ---
 ## Feature Breakdown
 ---
+
 The main features that will be implemented for the airbnb clone project, are the following:  
 
 ### API Documentation  
@@ -328,9 +336,11 @@ The review system allows guests to post ratings and comments about their stays, 
 
 ### Database Optimizations  
 This feature focuses on enhancing the backend's performance and responsiveness, especially as the amount of data grows. Techniques like indexing allow for faster data retrieval for common queries, while caching reduces the database load by storing frequently accessed information in a faster-access memory layer. These optimizations are vital for providing a smooth and fast user experience.  
+
 ---
 ## API Security
 ---
+
 ### Security Measures To Implement
 Securing the backend API is fundamental to protecting the platform and its users. The following measures will be implemented to create a robust defense against common threats:  
 
@@ -356,6 +366,7 @@ For this project, security is not a single feature but a critical requirement th
 ---
 ## CI/CD Pipeline
 ---
+
 CI/CD stands for Continuous Integration and Continuous Delivery/Deployment. It is an automated practice that streamlines the process of building, testing, and deploying software. A pipeline is the sequence of automated steps that takes new code from a developer's machine and delivers it to production.  
 
 ### Definitions  
