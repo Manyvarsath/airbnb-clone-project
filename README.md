@@ -1,121 +1,4 @@
-# Project Description
-This project is a full-stack clone of the popular accommodation booking platform AirBnB.
-The goal is to build a functional web application that allows users to browse property listings, 
-view detailed property information, and complete bookings.
-The project will cover frontend development, backend APIs, database design, and deployment.
-
-# Learning Objectives
-By completing this project, you will:
-
-* Learn to implement responsive UI/UX designs
-* Understand how to structure a complex web application
-* Practice working in a team with defined roles
-* Develop skills in component-based frontend architecture
-* Learn best practices for web application development
-
-## Tech Stack
-* **Frontend:** HTML, CSS, JavaScript (React or similar framework)
-* **Version Control:** Git and GitHub
-* **Design Tools:** Figma for UI/UX design
-
-## Requirements
-Project Initialization
-
-Set up GitHub repository with proper documentation
-Include comprehensive README with project overview
-UI/UX Design Planning
-
-Document design goals and key features
-Create page descriptions for main views
-Analyze Figma design specifications
-Identify color schemes and typography
-Roles and Responsibilities
-
-Define team structure and responsibilities
-Document each role’s contribution to the project
-UI Component Patterns
-
-Plan reusable UI components
-Document component architecture
-Best Practices
-Code Organization: Maintain clean, modular code structure
-Version Control: Use feature branches and meaningful commit messages
-Responsive Design: Ensure mobile-first approach
-Accessibility: Follow WCAG guidelines
-Documentation: Keep all project documentation updated
-Testing: Implement unit and integration tests
-UI/UX Design Planning
-Design Goals
-Create intuitive booking flow
-Maintain visual consistency
-Ensure fast loading times
-Prioritize mobile responsiveness
-Key Features
-Property search and filtering
-Detailed property viewing
-Secure checkout process
-User authentication
-Primary Pages
-Page	Description
-Property Listing View	Grid display of available properties with filters
-Listing Detailed View	Complete property details with images and booking form
-Simple Checkout View	Streamlined payment and booking confirmation
-Importance of User-Friendly Design
-A well-designed booking system reduces friction in the user journey, increases conversion rates, and improves customer satisfaction. Clear navigation, intuitive interfaces, and responsive design are critical for success.
-
-Figma Design Specifications
-Color Styles:
-
-Primary: #FF5A5F
-Secondary: #008489
-Background: #FFFFFF
-Text: #222222
-Secondary Text: #717171
-Typography:
-
-Primary Font: Circular, Medium (500), 16px
-Headings: Circular, Bold (700), 24px-32px
-Secondary Text: Circular, Book (400), 14px
-## Project Roles and 
-| Role | Responsibilities |
-| --- | --- |
-| Project Manager | Oversees timeline, coordinates team, manages deliverables |
-| Frontend Developers | Implements UI components, ensures responsive design |
-| Backend Developers | Builds APIs, manages database, implements business logic |
-| Designers | Creates mockups, maintains design system, ensures UX quality |
-| QA/Testers | Writes test cases, performs testing, reports bugs |
-| DevOps Engineers | Manages deployment, CI/CD pipeline, server infrastructure |
-| Product Owner | Defines requirements, prioritizes features, represents stakeholders |
-| Scrum Master | Facilitates agile processes, removes blockers, organizes meetings |
-## UI Component Patterns
-# Planned Components
-1.Navbar
-  * Logo
-  * Search bar
-  * User navigation
-  * Responsive menu
-
-2.Property Card
-  * Property image
-  * Basic details (price, location, rating)
-  * Favorite button
-  * Responsive layout
-
-3.Footer
-  * Site links
-  * Company information
-  * Social media links
-  * Copyright information
-Each component will be designed for reusability and consistency across the application.
-
-
--------------------------------
-Delete everything above this, before submitting for review
--------------------------------
-
 # FrontEnd
-# airbnb-clone-project
-
 ## 🔎 Overview  
 This project involves developing a full-stack replica of the Airbnb booking platform. The scope includes creating the user interface, building the backend APIs, designing the database, and handling deployment, all to support a web application where users can browse and book properties.  
 
@@ -127,22 +10,14 @@ The project aims to achieve several key objectives:
 **Design-Oriented:** Create an intuitive and visually consistent booking flow with fast loading times, prioritizing a mobile-first and user-friendly design.  
 
 ### Tech Stack
-The technology stack of this project includes:
+The technology stack of this project includes:  
 
 **Frontend:** HTML, CSS, JavaScript, and using a framework like React.  
 **Version Control:** Git and GitHub.  
 **Design Tools:** Figma for UI/UX design and specifications.  
 
 ## 🎨 UI/UX Design Planning
-_Objective: Document the planning process for the UI/UX design.
-Outline the design goals and the key features that need to be implemented.
-Include descriptions of the three primary pages: Property Listing View, Listing Detailed View, and Simple Checkout View in a table view
-Explain the importance of a user-friendly design in a booking system.
-Objective: Understand and explore the figma environment
-Create a list for all color styles, Typography (front family, font weight, font size)
-Explain the importance of identifying design properties of a mock up design._
-
-The UI/UX design is guided by the following objectives and required functionalities:
+The UI/UX design is guided by the following objectives and required functionalities:  
 
 ### Design Goals
 
@@ -150,7 +25,7 @@ The UI/UX design is guided by the following objectives and required functionalit
 **Maintain visual consistency:** The design elements, including colors, fonts, and layout, must be consistent across all pages.  
 **Ensure fast loading times:** The application should be optimized for performance to prevent user drop-off.  
 **Prioritize mobile responsiveness:** A mobile-first approach will be taken to ensure the application is fully functional and easy to use on all device sizes.  
-
+  
 ### Key Features
 
 **Property search and filtering:** Users must be able to search for properties and refine results using filters.  
@@ -165,6 +40,18 @@ The UI/UX design is guided by the following objectives and required functionalit
 | Property Listing View | A grid-based display of available properties that users can browse. This view will include integrated search and filtering capabilities. |
 | Listing Detailed View | A dedicated page showing all details for a single property, including a gallery of images, a full description, amenities, and the booking form. |
 | Simple Checkout View | A streamlined, multi-step form for users to confirm their booking details and enter payment information securely. |
+
+### Importance of a User-Friendly Design
+A well-designed, user-friendly booking system is critical to the project's success. It directly impacts user satisfaction and conversion rates by reducing friction in the booking process. By providing clear navigation, an intuitive interface, and a responsive design that works seamlessly on any device, the system can build user trust and make it easier for customers to move from browsing to completing a booking. This ultimately leads to higher customer satisfaction and more successful bookings. 
+
+COLORS:
+
+Primary color  - sea green: #34967C
+Secondary Color- : #FFA800
+Primary text : #222222
+Secondary text : #FFFFFF
+Primary background : #FFFFFF
+Secondary background : #222222
 
 ## 🧾 Project Roles and Responsibilities
 _Objective: Define and document the roles and responsibilities within the project.
