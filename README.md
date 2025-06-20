@@ -85,7 +85,7 @@ The Navbar will serve as the primary navigation header for the application, rema
 * **User Navigation:** A set of links or a dropdown menu for user-specific actions, such as accessing profile information, viewing bookings, and logging in or out.
 * **Responsive Menu:** A collapsible menu (often a "hamburger" icon) that contains the navigation links on smaller screens to ensure a clean mobile layout.
 
-## Property Card
+### Property Card
 The Property Card is a self-contained component used to display a summary of a single property within the listing grid. It is designed to give users a quick, scannable overview of a listing, encouraging them to click for more details.
 
 * **Property Image:** A primary image or a small carousel showcasing the property.  
@@ -93,7 +93,7 @@ The Property Card is a self-contained component used to display a summary of a s
 * **Favorite Button:** An icon (like a heart) that allows logged-in users to save a property to a wishlist.  
 * **Responsive Layout:** The card's layout will adapt to different screen sizes, potentially stacking elements vertically on mobile devices.
   
-## Footer
+### Footer
 The Footer will be located at the bottom of every page and will contain supplemental information, site-wide links, and legal notices.
 
 * **Site Links:** Navigation to important but less-frequented pages, such as "About Us," "Careers," or "Help Center."  
