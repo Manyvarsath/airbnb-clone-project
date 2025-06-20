@@ -438,7 +438,7 @@ For this project, security is not a single feature but a critical requirement th
 
 **Securing Payments and Financials:** The integrity of payment processing is non-negotiable. Without robust security, attackers could intercept financial data, authorize fraudulent charges, or divert funds, leading to direct financial losses for users and the platform. Encrypting communications with HTTPS and securely managing API keys for payment gateways are crucial for protecting every transaction.  
 
-**Maintaining Platform Integrity:** The value of the platform depends on the integrity of its content, such as bookings and reviews. A lack of security could allow malicious users to create fake bookings to block a property's availability, cancel legitimate reservations, or post fraudulent reviews to manipulate property ratings. Strict authorization rules—ensuring only the verified guest of a completed booking can leave a review—are vital for maintaining a fair and reliable ecosystem.  
+**Maintaining Platform Integrity:** The value of the platform depends on the integrity of its content, such as bookings and reviews. A lack of security could allow malicious users to create fake bookings to block a property's availability, cancel legitimate reservations, or post fraudulent reviews to manipulate property ratings. Strict authorization rules, ensuring only the verified guest of a completed booking can leave a review, are vital for maintaining a fair and reliable ecosystem.  
 
 # CI/CD Pipeline
 
