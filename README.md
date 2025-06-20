@@ -166,7 +166,6 @@ The server-side architecture for the Airbnb Clone project is engineered to offer
 **CI/CD Pipelines:** Automated pipelines for testing and deploying code changes.  
 
 ## Team Roles  
----
 
 **Backend Developer:** Responsible for implementing API endpoints, database schemas, and business logic.  
 **Database Administrator:** Manages database design, indexing, and optimizations.  
@@ -180,7 +179,7 @@ The server-side architecture for the Airbnb Clone project is engineered to offer
 **Test Automation Engineer:** Designs the test automation framework, and writes and maintains scripts for automated testing.  
 
 ## Technology Stack
----
+
 
 ### Django:  
 Django is a high-level Python web framework used to build the server-side application logic. Its philosophy provides a comprehensive suite of tools for rapid and secure web development, advantageous for a feature-rich platform with complex data models.  
@@ -230,8 +229,7 @@ CI/CD (Continuous Integration/Continuous Deployment) refers to a set of automate
        - Continuous Integration CI: Automatically builds the application and runs a suite of tests to verify the correctness of the new code and prevent regressions.  
        - Continuous Deployment CD: If the CI stage passes, the pipeline can automatically deploy the new version of the application to various environments, such as staging or production, enabling rapid and reliable software delivery.  
 
-## Database Design
----
+## 🛢 Database Design 
 
 ### Entities
 **1. User**  
