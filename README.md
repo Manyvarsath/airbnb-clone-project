@@ -44,9 +44,10 @@ The UI/UX design is guided by the following objectives and required functionalit
 ### Importance of a User-Friendly Design
 A well-designed, user-friendly booking system is critical to the project's success. It directly impacts user satisfaction and conversion rates by reducing friction in the booking process. By providing clear navigation, an intuitive interface, and a responsive design that works seamlessly on any device, the system can build user trust and make it easier for customers to move from browsing to completing a booking. This ultimately leads to higher customer satisfaction and more successful bookings. 
 
-COLORS:
+### Color Styles
 
-Primary color  - sea green: #34967C
+* Primary color: #34967C
+* - ![#34967C](https://placehold.co/15x15/#34967C/#34967C.png) `#34967C`
 Secondary Color- : #FFA800
 Primary text : #222222
 Secondary text : #FFFFFF
