@@ -232,7 +232,7 @@ Delete everything above this, before submitting for review
 -------------------------------
 
 ## Overview
-The server-side architecture for the Airbnb Clone project is engineered to offer a resilient and extensible framework. It is built to oversee user accounts, property data, reservations, and financial transactions. This core infrastructure will support the diverse functionalities needed to replicate Airbnb's essential features, guaranteeing a seamless experience for both guests and hosts.
+The server-side architecture for the Airbnb Clone project is engineered to offer a resilient and extensible framework. It is built to oversee user accounts, property data, reservations, and financial transactions. This core infrastructure will support the diverse functionalities needed to replicate Airbnb's essential features, guaranteeing a seamless experience for both guests and hosts.  
 
 ### Project Goals
 **User Management:** Implement a secure system for user registration, authentication, and profile management.  
@@ -268,40 +268,40 @@ The server-side architecture for the Airbnb Clone project is engineered to offer
 # Technology Stack
 
 ### Django:  
-Django is a high-level Python web framework used to build the server-side application logic. Its philosophy provides a comprehensive suite of tools for rapid and secure web development, advantageous for a feature-rich platform with complex data models.
+Django is a high-level Python web framework used to build the server-side application logic. Its philosophy provides a comprehensive suite of tools for rapid and secure web development, advantageous for a feature-rich platform with complex data models.  
 
-Role in the Project: Django's Object-Relational Mapper abstracts database operations, which will allow us to define and interact with data models using Python. The framework includes a built-in authentication system for managing user accounts and a default admin panel for administrative data management.
+**Role in the Project:** Django's Object-Relational Mapper abstracts database operations, which will allow us to define and interact with data models using Python. The framework includes a built-in authentication system for managing user accounts and a default admin panel for administrative data management.  
 
 ### Django REST Framework:  
-Django REST Framework is a powerful and flexible toolkit that builds upon Django to create Web APIs. It provides the necessary components to expose the application's data and business logic to external clients, such as a web frontend or mobile application.
+Django REST Framework is a powerful and flexible toolkit that builds upon Django to create Web APIs. It provides the necessary components to expose the application's data and business logic to external clients, such as a web frontend or mobile application.  
 
-Role in the Project: Django REST Framework will be used to construct the RESTful API endpoints such as /api/properties/, /api/bookings/. Its primary functions include serializing Django querysets and model instances into JSON format, handling request authentication to secure endpoints, and managing permissions to control user access to specific resources.
+**Role in the Project:** Django REST Framework will be used to construct the RESTful API endpoints such as /api/properties/, /api/bookings/. Its primary functions include serializing Django querysets and model instances into JSON format, handling request authentication to secure endpoints, and managing permissions to control user access to specific resources.  
 
 ### PostgreSQL:  
 PostgreSQL is an open-source object-relational database system used for the primary persistence of all application data. It is selected for its high degree of compliance with the SQL standard, performance with complex queries, and robust features that ensure data integrity.
 
-Role in the Project: PostgreSQL stores all critical information, including user credentials, property details, pricing, availability calendars, booking histories, reviews, and transaction records. Its support for ACID (Atomicity, Consistency, Isolation, Durability) transactions is essential. This guarantees that operations like a booking and its corresponding payment are processed as a single, indivisible unit, preventing data corruption by ensuring the operation either completes successfully or fails without leaving the database in an inconsistent state.
+**Role in the Project:** PostgreSQL stores all critical information, including user credentials, property details, pricing, availability calendars, booking histories, reviews, and transaction records. Its support for ACID (Atomicity, Consistency, Isolation, Durability) transactions is essential. This guarantees that operations like a booking and its corresponding payment are processed as a single, indivisible unit, preventing data corruption by ensuring the operation either completes successfully or fails without leaving the database in an inconsistent state.  
 
 ### GraphQL:  
-GraphQL is a query language for APIs that provides a more efficient and flexible alternative to traditional REST for data fetching. It enables a client to request a specific set of data fields from the server in a single API call.
+GraphQL is a query language for APIs that provides a more efficient and flexible alternative to traditional REST for data fetching. It enables a client to request a specific set of data fields from the server in a single API call.  
 
-Role in the Project: Instead of relying on multiple REST endpoints that return fixed data structures, GraphQL allows the frontend client to define its exact data requirements. For example, a property list view can query for only the title and price, while a detailed property view can query for all associated data. This capability reduces over-fetching of data, minimizes the network payload, and improves application performance.
+**Role in the Project:** Instead of relying on multiple REST endpoints that return fixed data structures, GraphQL allows the frontend client to define its exact data requirements. For example, a property list view can query for only the title and price, while a detailed property view can query for all associated data. This capability reduces over-fetching of data, minimizes the network payload, and improves application performance.  
 
 ### Celery:
-Celery is a distributed task queue system for executing asynchronous operations outside of the main application's request-response cycle. This is used for tasks that are too time-consuming to be handled synchronously without negatively impacting user experience.
+Celery is a distributed task queue system for executing asynchronous operations outside of the main application's request-response cycle. This is used for tasks that are too time-consuming to be handled synchronously without negatively impacting user experience.  
 
-Role in the Project: When a user action initiates a long-running process, the task is offloaded to a Celery worker. For example, after a booking is confirmed, Celery manages the background execution of tasks such as:
-       - Sending a confirmation email to the guest.
-       - Transmitting a notification to the host.
-       - Initiating payment processing via a third-party gateway.
+**Role in the Project:** When a user action initiates a long-running process, the task is offloaded to a Celery worker. For example, after a booking is confirmed, Celery manages the background execution of tasks such as:  
+       - Sending a confirmation email to the guest.  
+       - Transmitting a notification to the host.  
+       - Initiating payment processing via a third-party gateway.  
        - Updating search indexes or availability data.  
 
 ### Redis:
-Redis is a high-performance, in-memory key-value data store. In this architecture, it serves two distinct functions: as a caching layer to reduce database load and as a message broker to facilitate communication between the web application and Celery.
+Redis is a high-performance, in-memory key-value data store. In this architecture, it serves two distinct functions: as a caching layer to reduce database load and as a message broker to facilitate communication between the web application and Celery.  
 
 **Role in the Project:**
-    - Caching: Redis stores the results of frequent or expensive database queries. Serving this data directly from memory significantly reduces latency and lessens the load on the PostgreSQL database.
-    - Message Broker: Redis acts as the intermediary that holds tasks for Celery. The Django application places a task message in a Redis queue, and Celery workers retrieve and execute the task from that queue. It can also be used for session storage.
+       - Caching: Redis stores the results of frequent or expensive database queries. Serving this data directly from memory significantly reduces latency and lessens the load on the PostgreSQL database.  
+       - Message Broker: Redis acts as the intermediary that holds tasks for Celery. The Django application places a task message in a Redis queue, and Celery workers retrieve and execute the task from that queue. It can also be used for session storage.  
 
 ### Docker:
 Docker is a platform for developing, shipping, and running applications in containers. A container packages the application code along with all its dependencies, libraries, and configuration files into a single, isolated unit.  
@@ -312,8 +312,8 @@ Docker is a platform for developing, shipping, and running applications in conta
 CI/CD (Continuous Integration/Continuous Deployment) refers to a set of automated practices that manage the build, testing, and deployment processes of the application.  
 
 **Role in the Project:** These automated pipelines are triggered by code commits to the project's repository.  
-Continuous Integration CI: Automatically builds the application and runs a suite of tests to verify the correctness of the new code and prevent regressions.  
-Continuous Deployment CD: If the CI stage passes, the pipeline can automatically deploy the new version of the application to various environments, such as staging or production, enabling rapid and reliable software delivery.  
+       - Continuous Integration CI: Automatically builds the application and runs a suite of tests to verify the correctness of the new code and prevent regressions.  
+       - Continuous Deployment CD: If the CI stage passes, the pipeline can automatically deploy the new version of the application to various environments, such as staging or production, enabling rapid and reliable software delivery.  
 
 # Database Design
 
