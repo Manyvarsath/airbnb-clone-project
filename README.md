@@ -21,10 +21,10 @@ The UI/UX design is guided by the following objectives and required functionalit
 
 ### Design Goals
 
-**Create an intuitive booking flow:** The user's journey from searching to booking should be logical and straightforward.  
-**Maintain visual consistency:** The design elements, including colors, fonts, and layout, must be consistent across all pages.  
-**Ensure fast loading times:** The application should be optimized for performance to prevent user drop-off.  
-**Prioritize mobile responsiveness:** A mobile-first approach will be taken to ensure the application is fully functional and easy to use on all device sizes.  
+**1. Create an intuitive booking flow:** The user's journey from searching to booking should be logical and straightforward.  
+**2. Maintain visual consistency:** The design elements, including colors, fonts, and layout, must be consistent across all pages.  
+**3. Ensure fast loading times:** The application should be optimized for performance to prevent user drop-off.  
+**4. Prioritize mobile responsiveness:** A mobile-first approach will be taken to ensure the application is fully functional and easy to use on all device sizes.  
   
 ### Key Features
 
