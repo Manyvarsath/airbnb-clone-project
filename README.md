@@ -116,13 +116,24 @@ Delete everything above this, before submitting for review
 # FrontEnd
 # airbnb-clone-project
 
-# Overview
+## 🔎 Overview  
+This project involves developing a full-stack replica of the Airbnb booking platform. The scope includes creating the user interface, building the backend APIs, designing the database, and handling deployment, all to support a web application where users can browse and book properties.  
 
-# Project Goals
+### Project Goals
+The project aims to achieve several key objectives:  
 
-# Tech Stack
+**Functional:** Implement core features including property search with filtering, detailed property views, a secure checkout process, and user authentication.  
+**Educational:** Develop skills in responsive UI/UX design, component-based architecture, team collaboration, and web development best practices.  
+**Design-Oriented:** Create an intuitive and visually consistent booking flow with fast loading times, prioritizing a mobile-first and user-friendly design.  
 
-# UI/UX Design Planning
+### Tech Stack
+The technology stack of this project includes:
+
+**Frontend:** HTML, CSS, JavaScript, and using a framework like React.  
+**Version Control:** Git and GitHub.  
+**Design Tools:** Figma for UI/UX design and specifications.  
+
+## 🎨 UI/UX Design Planning
 _Objective: Document the planning process for the UI/UX design.
 Outline the design goals and the key features that need to be implemented.
 Include descriptions of the three primary pages: Property Listing View, Listing Detailed View, and Simple Checkout View in a table view
@@ -130,19 +141,42 @@ Explain the importance of a user-friendly design in a booking system.
 Objective: Understand and explore the figma environment
 Create a list for all color styles, Typography (front family, font weight, font size)
 Explain the importance of identifying design properties of a mock up design._
-  
-# Project Roles and Responsibilities
+
+The UI/UX design is guided by the following objectives and required functionalities:
+
+### Design Goals
+
+**Create an intuitive booking flow:** The user's journey from searching to booking should be logical and straightforward.  
+**Maintain visual consistency:** The design elements, including colors, fonts, and layout, must be consistent across all pages.  
+**Ensure fast loading times:** The application should be optimized for performance to prevent user drop-off.  
+**Prioritize mobile responsiveness:** A mobile-first approach will be taken to ensure the application is fully functional and easy to use on all device sizes.  
+
+### Key Features
+
+**Property search and filtering:** Users must be able to search for properties and refine results using filters.  
+**Detailed property viewing:** An interface to display comprehensive information about a single property is required.  
+**Secure checkout process:** Users need a secure and simple way to complete their booking and payment.  
+**User authentication:** The system must allow users to register and log in to manage their profiles and bookings.  
+
+### Primary Page Descriptions
+
+| Page | Description |
+| --- | --- |
+| Property Listing View | A grid-based display of available properties that users can browse. This view will include integrated search and filtering capabilities. |
+| Listing Detailed View | A dedicated page showing all details for a single property, including a gallery of images, a full description, amenities, and the booking form. |
+| Simple Checkout View | A streamlined, multi-step form for users to confirm their booking details and enter payment information securely. |
+
+## 🧾 Project Roles and Responsibilities
 _Objective: Define and document the roles and responsibilities within the project.
 List and describe the roles such as Project Manager, Frontend Developers, Backend Developers, Designers, QA/Testers, DevOps Engineers, Product Owner, and Scrum Master.
 For each role, outline their key responsibilities and how they contribute to the project’s success._
 
-# UI Component Patterns
+## 📱 UI Component Patterns
 _Objective: Begin exploring the UI components for the AirBnB Clone project.
 - Describe the components you plan to create, such as a Navbar, Property Card, and Footer_
 
----
+
 # BackEnd
----
 
 ## 🔎 Overview
 The server-side architecture for the Airbnb Clone project is engineered to offer a resilient and extensible framework. It is built to oversee user accounts, property data, reservations, and financial transactions. This core infrastructure will support the diverse functionalities needed to replicate Airbnb's essential features, guaranteeing a seamless experience for both guests and hosts.  
